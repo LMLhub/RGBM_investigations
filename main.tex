@@ -202,7 +202,6 @@ urlcolor={blue!50!black}}
 \pagebreak \newpage
 %\nopagebreak
 \section{Introduction}\label{sec:introduction}
-
 % What is mobility?
 Economic mobility describes ``dynamic aspects of inequality''~\citep{Shorrocks1978}. It quantifies how wealth (or income\footnote{We focus on wealth in this paper, but it applies also to income}) ranks of individuals evolve over time. Intuitively, when mobility is high, ranks evolve quickly, and the chances of an individual to change her position in the wealth distribution over a given time period are high. When mobility is low, individuals are unlikely to change their rank in the distribution over time, or that it changes slowly.
 
@@ -250,11 +249,11 @@ where $rg(\mathrm{x})$ is the rank transformation of $\mathrm{x}$, $x_i(t)$ is t
 
 \paragraph{Intragenerational earnings elasticity:} The second measure is the intragenerational earnings elasticity, quantified via the slope $b_{t_m,t_n}$ of the regression
 \begin{align*}
-    x_i(t_n) &= b_0 + b_{t_m,t_n} x_i(t_m) + u_i,
+   \log( x_i(t_n)) &= b_0 + b_{t_m,t_n} \log(x_i(t_m)) + u_i,
 \end{align*}
 where $b_0$ is the intercept and $u_i$ is the error term. This is a simple linear regression and therefore,
 \begin{align}
-    b_{t_m,t_n} &= \mathrm{corr}(x(t_n),x(t_m)) \frac{\mathrm{var(x(t_n))}}{\mathrm{var(x(t_m))}},
+    b_{t_m,t_n} &= \mathrm{corr}(\log(x(t_n)),\log(x(t_m))) \frac{\mathrm{var}(\log(x(t_n)))}{\mathrm{var}(\log(x(t_m)))},
     \label{eq:iee-estimation}
 \end{align}
 where $\mathrm{corr}(\mathrm{x},\mathrm{y})$ is the correlation between the variables $\mathrm{x}$ and $\mathrm{y}$ and $\mathrm{var}(\mathrm{x})$ is the variance of $\mathrm{x}$. As with the rank correlation, lower intragenerational earnings elasticity also indicates greater mobility. However, this measure is unbounded and may take on any real values.
@@ -264,7 +263,7 @@ transition matrix $\mathbf{A}$ in which cell entries $A_{kl}$ show the probabili
 
 \subsection{Limitations}
 
-To visualize the limitations of the standard measures, in Fig~\ref{fig:standard-mobility-measures} we construct an artificial example where we examine the economic mobility in a population of 9 individuals during 3 time periods. In tFig~\ref{fig:standard-mobility-measures}A, we show the dynamics of the wealth rankings. Besides this, we also highlight the amount of wealth owned by a person with a colored circle, with darker colored and larger circle implying a wealthier person. 
+To visualize the limitations of the standard measures, in Fig~\ref{fig:standard-mobility-measures} we construct an artificial example where we examine the economic mobility in a population of 9 individuals during 3 time periods. In Fig~\ref{fig:standard-mobility-measures}A, we show the dynamics of the wealth rankings. Besides this, we also highlight the amount of wealth owned by a person with a colored circle, with darker colored and larger circle implying a wealthier person. 
 \begin{figure*}[t!]
 \includegraphics[width=\linewidth]{figs/fig_mobility_measures.pdf}
 \caption{\textbf{Performance of mobility measures.} \textbf{A)} Dynamics of the wealth rankings in an artificial economy consisting of 9 people, in a span of 3 years. \textbf{B)} Estimated Spearman correlation and Intragenerational earnings elasticity during the studied periods. \textbf{C)} The corresponding mobility transition matrices. \textbf{D)} The distribution of wealth for the 3 time periods. \label{fig:standard-mobility-measures}}
@@ -307,7 +306,7 @@ The ergodicity indicates that in a mixing economy there is always a stationary d
 \end{figure*}
 
 
-\section{Mixing in a simple model of an economy}\label{sec:rgbm}
+\section{Mixing time in a simple model of an economy}\label{sec:rgbm}
 
 \subsection{Reallocating geometric Brownian motion}
 To illustrate the application of mixing time in economic systems, we utilize the RGBM model. Under RGBM, the dynamics of the wealth of person $i$ is specified as
@@ -317,7 +316,7 @@ To illustrate the application of mixing time in economic systems, we utilize the
 \end{align}
 with $\mu > 0$ being the drift term, $\sigma > 0$ the noise amplitude, and $\mathrm{d}W_i$ is an independent Wiener increment, $W_i(t) =\int_0^t \mathrm{d}W_i$. In the equation $\tau$ is a parameter that quantifies reallocation of wealth. It implies that every year, everyone in the economy contributes a proportion $\tau$ of their wealth to a central pool, and then the pool is shared evenly across the population ($\langle x \rangle_N$ is per-capita wealth). The parameter aggregates a multitude of effects: collective investment in infrastructure, education, social programs, taxation, rents paid, private profits made etc. 
 
-The dynamical behavior of RGBM is strictly dependent on the relation between $\tau$ and $\sigma$, and can be both ergodic and non-ergodic. Since mixing time is predicated on ergodic dynamics, we are going to focus on the ergodic regime which occurs when $\tau > \frac{\sigma^2}{2}$. Then, the model exhibits mean-reversion as each $x_i$ reverts to the population average $\langle x \rangle_N$. The large population approximation $\langle x(t) \rangle_N = \exp \left[\mu t\right]$ is valid, and it can be used to write a mean field equation for the dynamics of the rescaled wealth $y_i = x_i / \langle x \rangle_N$ as
+The dynamical behavior of RGBM is strictly dependent on the relation between $\tau$ and $\sigma$, and can be both ergodic and non-ergodic. Since the existence of mixing time is predicated on ergodic dynamics, we are going to focus on the ergodic regime which occurs when $\tau > \frac{\sigma^2}{2}$. Then, the model exhibits mean-reversion as each $x_i$ reverts to the population average $\langle x \rangle_N$. The large population approximation $\langle x(t) \rangle_N = \exp \left[\mu t\right]$ is valid, and it can be used to write a mean field equation for the dynamics of the rescaled wealth $y_i = x_i / \langle x \rangle_N$ as
 \begin{align}
     d y &=   y \sigma d W - \tau (y - 1) dt.
     \label{eq:rescaled-rgbm}
@@ -325,7 +324,7 @@ The dynamical behavior of RGBM is strictly dependent on the relation between $\t
 Notice that the mean field representation leads to decoupling of the dynamics of each individual $i$, and hence we can neglect the subscript $i$ in equation~(\ref{eq:rescaled-rgbm}). This is a convenient form of RGBM which allows for deriving powerful analytical results regarding the properties of the model. For instance, we can derive the stationary distribution for the rescaled wealth, which reads
 \begin{align}
     p(y) &= \frac{(\theta - 1)^{\theta}}{\Gamma(\theta)} \exp{\big(-\frac{\theta - 1}{y}\big)} y^{-(1+\theta)},
-    \label{eq:stationary-distributin}
+    \label{eq:rgbm-stationary-distribution}
 \end{align}
 where $\theta = 1 + \frac{2 \tau}{\sigma^2}$ and $\Gamma(\cdot)$ is the Gamma function.  The distribution has a power-law tail as $y \to \infty$,
 resembling Pareto’s often confirmed observation that the frequency of large wealths tends to decay
@@ -341,14 +340,16 @@ In RGBM, mixing time can be analytically estimated from its correlation function
 \end{align}
 This function measures the statistical relation between observations of rescaled wealth at two different time points $t$ and $t-\delta$. 
 
-Let us define the time period $t^*$ as the transition at which the distribution of the subsample converges to the stationary distribution. Then, we can reformulate of the stationary distribution in terms of this period as,
+In a mixing economy the subsample distribution will eventually converge to the same distribution as the one of the whole population. Therefore, we can reduce our analysis to simply studying the convergence time of the subsample distribution to the stationary distribution. Moreover, since in RGBM the dynamics of rescaled wealth of each individual are decoupled, we can further reduce the analysis to examining the convergence time of the process described with Eq.~(\ref{eq:rescaled-rgbm}) to the stationary distribution~(\ref{eq:stationary-distributin}.
+
+This can be done by defining the time period $t^*$ as the transition point at which the distribution of rescaled wealth converges to the stationary distribution. Then, we can rewrite correlation function terms of this period as,
 \begin{align*}
     \mathrm{corr(y(t^*), y(t))} &= \exp\left[ -\tau (t^* -t)\right],
     %\label{eq:rgbm-correlation}
 \end{align*}
 for any time period $t$ that belongs to the mixing time state. Obviously, the magnitude of any statistical measure $S(t)$ will be proportional to the value of this correlation, and its log will be of the form
 \begin{align}
-    \log (S(t)) &=  - \tau (t^*-t),
+    \log (S(t)) &\propto  - \tau (t^*-t),
 \end{align}
 which implies that the mixing time in RGBM is $1/\tau$. The interpretation behind this result is fairly intuitive -- in an economy in which reallocation from the rich to the poor is larger, there will be also more mixing. On the other  hand, as the reallocation rate approaches zero, mixing times get longer, and mobility lower. Since decreasing reallocation rates also lead to increasing inequality, this result is in line with the empirical observations which suggests that as inequality increases mobility decreases, and vice versa~\citep{corak2013}.
 
@@ -360,34 +361,45 @@ Fig~\ref{fig:rgbm-mixing-time} compares our analytical expression with numerical
 
 \subsection{Mixing time and standard measures of mobility}\label{sec:measures}
 
-Differently from the mixing time, in RGBM some of the standard measures mobility, besides being dependent on the reallocation parameter, are also determined by the noise amplitude $\sigma$. This is a consequence of the randomness playing a significant role in the wealth dynamics when we consider time frames that are shorter than the mixing time. 
+Differently from the mixing time, in RGBM the standard measures mobility, besides being dependent on the reallocation parameter, may also be determined by the noise amplitude $\sigma$. This is a consequence of the randomness playing a significant role in the wealth dynamics when we consider time frames that are shorter than the mixing time. 
 
 In what follows we evaluate the relationship between mixing time and the standard measures of mobility in RGBM.
 
-\paragraph{Spearman rank correlation:} In the ergodic regime of RGBM the Spearman rank correlation is inversely related to the mixing time. However, the rank correlation is also dependent on the noise amplitude $\sigma$ and the temporal difference $\delta$ between the two periods that are being compared. Larger values for both parameters lead to an greater economic mobility. This can be seen in  Fig.~\ref{fig:rgbm-spearman-correlation} where we plot the additive inverse of log of the rank correlation divided by $\delta$ as a function of $\tau$ for various noise amplitudes.
+\paragraph{Spearman rank correlation:} In the ergodic regime of RGBM the Spearman rank correlation is inversely related to the mixing time. However, the rank correlation is also dependent on the noise amplitude $\sigma$ and the temporal difference $\delta$ between the two periods that are being compared. Larger values for both parameters lead to a greater economic mobility. This can be seen in  Fig.~\ref{fig:rgbm-standard-measures}A where we plot the additive inverse of log of the rank correlation divided by $\delta$ as a function of $\tau$ for various noise amplitudes.
+
 
 \begin{figure*}[t!]
-\includegraphics[width=10cm]{figs/fig_spearman_rgbm.eps}
-\caption{\textbf{Spearman rank correlation in RGBM.} The colored lines correspond to numerical estimations of the stationary Spearman rank correlation in RGBM, color-mapped according to the magnitude of the noise amplitude. In the simulation, $\sigma^2 \in \left[ 0.001, 0.05\right]$, $\delta = 20$, $N = 10^4$.\label{fig:rgbm-spearman-correlation}}
+\includegraphics[width=\linewidth]{figs/fig_mixing_time_vs_standard_measures.eps}
+\caption{\textbf{Mixing time and standard measures of economic mobility.} \textbf{A)} Log of the Spearman rank correlation divided by the temporal difference as a function of $\tau$. \textbf{B)} Same as \textbf{A)}, only on the y axis is the log of the Intragenerational earnings elasticity. \textbf{C)} Same as \textbf{A)}, only on the y axis is the log of the GMFPT. \textbf{A-C} The line colors correspond to the magnitude of the noise amplitude, as highlighted by the colormap. In the simulation, $\delta = 20$ and $N = 10^4$.\label{fig:rgbm-standard-measures}}
 \end{figure*}
 
-\paragraph{Intragenerational earnings elasticity:} In RGBM, once the dynamics reaches a stationary state, the variance of $y(t)$ is invariant on time, \ie, the variances term in equation~(\ref{eq:iee-estimation}) cancel out. Hence, the  intergenerational earnings elasticity reduces simply to the correlation between observations corresponding to two different time periods as given by equation~(\ref{eq:rgbm-correlation}). In other words, the only difference between mixing time and the intragenerational earnings elasticity is the shift in the magnitude of the later due to the dependence on the time period over which it is estimated. This finding is confirmed in Fig.~\ref{fig:rgbm-iee}, where we show the log of the stationary intragenerational earnings elasticity normalized for the time frame $\delta$ as a function of the parameter $\tau$ and vary $\sigma^2$.
+\paragraph{Intragenerational earnings elasticity:} 
+Identically to the properties of the Spearman Rank correlation and as evidenced in Fig.\ref{fig:rgbm-standard-measures}B, the Intragenerational earnings elasticity is also dependent on both the noise amplitude and the magnitude of reallocation. \textcolor{red}{The approximate mathematical relationship between the intragenerational earnings elasticity and mixing time is studied in the Appendix ??.}
 
-\begin{figure*}[t!]
-\includegraphics[width=10cm]{figs/fig_iee_rgbm.eps}
-\caption{\textbf{Intragenerational earnings elasticity in RGBM.} The colored lines correspond to numerical estimations of the stationary Intragenerational earnings elasticity in RGBM, color-mapped according to the magnitude of the noise amplitude. In the simulation, $\sigma^2 \in \left[ 0.001, 0.05\right]$, $\delta = 20$, $N = 10^4$. \label{fig:rgbm-iee}}
-\end{figure*}
+%In RGBM, once the dynamics reaches a stationary state, the variance of $y(t)$ is invariant on time, \ie, the variances term in equation~(\ref{eq:iee-estimation}) cancel out. Hence, the  intergenerational earnings elasticity reduces simply to the correlation between observations corresponding to two different time periods as given by equation~(\ref{eq:rgbm-correlation}). In other words, the only difference between mixing time and the intragenerational earnings elasticity is the shift in the magnitude of the later due to the dependence on the time period over which it is estimated. This finding is confirmed in Fig.~\ref{fig:rgbm-iee}, where we show the log of the stationary intragenerational earnings elasticity normalized for the time frame $\delta$ as a function of the parameter $\tau$ and vary $\sigma^2$.
+
 
 \paragraph{Transition matrices:} As the transition matrix divides the wealth distribution into $Q$ quantiles, it gives us a total of $Q^2$ measures for mobility, each quantifiyng the relationship between pairs of quantiles. Instead of studying each of those measures, we will focus on one aggregate quantity called the Global Mean First Passage Time (GMFPT). Formally, the mean first passage time (MFPT) between quantiles $k$ and $l$ gives an estimate of the time required for an individual whose wealth belongs to quantile $k$ to move to quantile $l$, and the GMFPT is the average across all possible MFPT pairs. By construction, this quantity is measured in the same units as mixing time, and as such it can give us a direct relation between the properties of the standard measures and mixing time in RGBM.
 
-As evidenced in Fig.~\ref{fig:rgbm-gmfpt}, similarly to the rank correlation, the behavior of the transition matrices is dependent on both the noise amplitude and the temporal differences between the periods for which it is estimated. However, differently from the previous measures it appears that there is no linear transformation for the relationship between GMFPT and the mixing time. \textcolor{red}{Maybe elaborate...}
+As inferred from Fig.~\ref{fig:rgbm-standard-measures}C, the behavior of the transition matrices is similar to the one of the previous two measures. In other words, it is dependent on both the noise amplitude and the temporal differences between the periods for which it is estimated. However, differently from the previous measures it appears that there is no linear transformation for the relationship between GMFPT and the mixing time. 
+
+
+\subsection{The Great Gatsby curve in RGBM}
+
+Let us now turn our attention to applying mixing time in studying the relationship between mobility and the static concept of inequality. This is usually done by evaluating the properties of the Great Gatsby curve. The curve represents a simple two-dimensional visualization where on the x-axis is given the static inequality and on the y-axis the economic mobility. It was first introduced in a talk by Krueger~\cite{krueger2012rise}, who showed empirically using country level data that economic \textit{immobility} and static inequality are  positively and linearly related.
+
+Formally, static inequality is defined as the extent of concentration in the distribution of wealth among the population. Hence, various measures which quantify the dispersion of the stationary distribution~\eqref{rgbm:stationary-distribution} can be used to evaluate this concept in RGBM. Here, we use the most widely used measure, the Gini coefficient. The coefficient can be represented using the stationary cumulative distribution function $\mathrm{F}(y)$ of the wealth as
+\begin{align}
+\texttt{Gini} &= \int_0^{\infty} \mathrm{F}(y) \bigg( 1 - \mathrm{F}(y) \bigg).
+\end{align}
+A Gini coefficient of zero expresses perfect equality, where all values are the same (for example, where everyone has the same wealth), whereas a Gini coefficient of one expresses maximal inequality among values (e.g., for a large number of people, where only one person has all the wealth, and all others have none).
+
+\textcolor{red}{Fig~\ref{fig:rgbm-great-gatsby} displays mixing time as a function of the Gini index in RGBM. RGBM appropriately reproduces empirical observations by suggesting that inequality and immobility are positively related~\cite{krueger2012rise}. However, in RGBM the relationship is nonlinear and it looks like an inverted sigmoid curve.}
 
 \begin{figure*}[t!]
-\includegraphics[width=10cm]{figs/fig_gmfpt_rgbm.eps}
-\caption{\textbf{GMFPT in RGBM.} The colored lines correspond to numerical estimations of the stationary GMFPT in RGBM, color-mapped according to the magnitude of the noise amplitude. In the simulation, $\sigma^2 \in \left[ 0.001, 0.05\right]$, $\delta = 20$, $N = 10^4$. \label{fig:rgbm-gmfpt}}
+\includegraphics[width=10cm]{figs/fig_great_gatsby.eps}
+\caption{\textbf{The Great Gatsby curve in RGBM.} Mixing time as a function of the Gini Coefficient in RGBM. The line colors correspond to the magnitude of the noise amplitude, as highlighted by the colormap.\label{fig:rgbm-great-gatsby}}
 \end{figure*}
-
-
 
 
 
@@ -400,6 +412,8 @@ As evidenced in Fig.~\ref{fig:rgbm-gmfpt}, similarly to the rank correlation, th
     \item comment on real data?
 \end{itemize}
 
+\textcolor{red}{In a non-ergodic economy mixing time will exist, but under a suitable transformation of the wealth variable. }
+
 \section{Conclusion}\label{sec:conclusion}
 \bibliography{../LML_bibliography/bibliography}
 %\clearpage
@@ -407,27 +421,3 @@ As evidenced in Fig.~\ref{fig:rgbm-gmfpt}, similarly to the rank correlation, th
 %\section{}\label{app:appA}
 \end{document}
 
-
-\subsection{Mobility and inequality in reallocation geometric Brownian motion}\label{sec:inequality}
-
-The ergodicity, and hence, stationarity allows us to use the stationary distribution in order analytically quantify standard welfare indices and subsequently use them to derive economic policies. For instance, the variance of the distribution can be used as a measure of economic inequality~\cite{berman2017empirical}. Its expression is
-\begin{align}
-\mathrm{var}(y) &= \frac{\sigma^2}{2 \tau - \sigma^2}.
-\label{eq:rgbm-var}
-\end{align}
-Formally, economic inequality is defined as the extent of concentration in the distribution of wealth among the population. In this aspect, a higher variance implies that the total wealth in the economy is concentrated in few individuals, i.e., the society is more unequal.
-
-In addition, the correlation function of the dynamics can be directly implemented as a measure of intragenerational social mobility, \textbf{describe connection between correlation function and measures of economic mobility}
-\begin{align}
-    \mathrm{corr(y(t), y(t+\delta))} &= \exp\left[ -\tau \delta \right],
-    \label{eq:rgbm-mobility}
-\end{align}
-where $\delta$ quantifies the length of the period used for comparison of the wealth between individuals~\cite{liu2017correlation}.
-Intragenerational social mobility measures the the feasibility of an individual to change their position in the wealth distribution. Since the system is ergodic, the correlation function can be used for deriving the mixing time, i.e., the time scale over which an individuals moves across the whole distribution. This is the relevant measure of immobility in the wealth dynamics of RGBM as it quantifies the amount of time needed for an individual to experience every wealth rank in the population. Its value is $1/\tau$, and a higher value indicates that it takes longer for an individual to visit all possible states of the distribution, thus making the economy less socially mobile.
-
-Fig.~\ref{fig:rgbm-ineq-mobility} confirms the stationary dynamics of these two measures by plotting them as a function of time. The inset plot of the figure gives an example for the analytical power of the positive $\tau$ regime in RGBM. Namely, the figure visualizes the stationary Great Gatsby curve. This curve measures the relationship between inequality and social immobility, and has been used for developing social and financial policies. RGBM appropriately reproduces empirical observations by suggesting that economic inequality and social immobility are positively related~\cite{krueger2012rise}.
-
-\begin{figure*}[t!]
-\includegraphics[width=10cm]{figs/fig0.eps}
-\caption{Immobility and inequality in RGBM. \underline{\textbf{Scatter lines:}} Numerical estimation for the inequality and immobility, measured respectively via Eqs.~(\ref{eq:rgbm-var}) and~(\ref{eq:rgbm-mobility}), in a simulation or RGBM. The inset plot give the analytical relationship between inequality and mobility in RGBM, i.e. the Great Gatsby curve. \underline{\textbf{Parameters:}} We set $\mu = 0.021$, $\sigma^2 = 0.01$ and $N = 10^5$. The initial condition $x_i(0) = 1$ for all $i$.\label{fig:rgbm-ineq-mobility}}
-\end{figure*}
