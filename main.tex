@@ -233,7 +233,7 @@ The paper is organized as follows.~\Sref{mixingtime} discusses the concept of mi
 
 \section{Standard measures of economic mobility}\label{sec:mixingtime}
 
-We begin by an overview of standard measures of economic mobility. These measures describe properties of the bivariate joint wealth distribution in two points in time. To characterize these measures we utilize two widely used measures of economic mobility: Spearman's rank correlation and the intragenerational earnings elasticity. We also describe the wealth transition matrix, or copula, from which various mobility measures can be derived.
+We begin with an overview of standard measures of economic mobility. These measures describe properties of the bivariate joint wealth distribution in two points in time. To characterize these measures we utilize two widely used measures of economic mobility: Spearman's rank correlation and the intragenerational earnings elasticity. We also describe the wealth transition matrix, or copula, from which various mobility measures can be derived.
 
 \paragraph{Spearman's rank correlation:} Spearman's rank correlation is defined on a joint distribution of wealth at two points in time, $t_m$ and $t_n$ ($t_m < t_n$). It is defined as
 %
@@ -262,7 +262,6 @@ where $\mathrm{corr}(x,y)$ is the correlation between the variables $x$ and $y$ 
 transition matrix $\mathbf{A}$ in which the elements $A_{kl}$ quantify the probability that an individual in wealth quantile $k$ in period $t_m$ is found in wealth quantile $l$ in period $t_n$. In a perfectly mobile economy, the entries of the transition matrix are all equal to each other. This would correspond to $0$ rank correlation. In an immobile economy, on the other hand, the largest values are concentrated in the diagonal entries. A perfectly immobile case, of rank correlation $1$, would correspond to the identity transition matrix.
 
 \subsection{Limitations}
-
 To visualize the limitations of the standard measures, in \fref{standard-mobility-measures} we construct a simplified example in economy with 9 individuals, during 3 time periods. At the left panel we show the dynamics of the wealth ranks. Besides this, we also highlight the amount of wealth owned by a person with a colored circle, with darker colored and larger circle implying a wealthier person.
 %
 \begin{figure}[!htb]
@@ -272,41 +271,39 @@ To visualize the limitations of the standard measures, in \fref{standard-mobilit
 \label{fig:standard-mobility-measures}}
 \end{figure}
 
-\YB{ranks are reversed in order -- tertile 1 should be the poorest, etc.}
+%\YB{ranks are reversed in order -- tertile 1 should be the poorest, etc.}
 
 In our example only the four richest individuals changed their wealth rank. In particular, in the second period, $t_2$, the second richest person becomes the richest, while the richest person in the first period $t_1$ becomes second richest. In addition, the third and fourth richest individuals also switch their positions. In period $t_3$, the dynamics are reversed, thus ending up with the same wealth rankings as in $t_1$. The only difference is that in this period, the distribution of wealth has changed, with the richest individual being richer than in the previous periods.
-
 If we were to look at the rank correlation, it shows that mobility was the same between $t_1$ and $t_2$, and between $t_2$ and $t_3$. However, overall, between $t_1$ and $t_3$ it would show no mobility ($r_{t_1,t_3} = 1$). The intragenerational earnings elasticity gives us similar results. In fact, since inequality increased in the last period, it further suggests that the economy became less mobile. 
 
-The same conclusions hold when looking at the transition matrices estimated by dividing the wealth rankings in tertiles. The transition matrices between $t_1$ and $t_2$ and between $t_2$ and $t_3$ suggest that there is a $p=1/3$ probability for an individual in the second tertile to climb up to the top tertile and vice versa. Yet, we structured our economy in a way that allows movement only between the individuals at the edge of the tertile, so the transition matrices fail to adequately represent the movement of the typical person in the tertile.
+The same conclusions hold when looking at the transition matrices estimated by dividing the wealth rankings in tertiles. The transition matrices between $t_1$ and $t_2$ and between $t_2$ and $t_3$ suggest that there is a $p=1/3$ probability for an individual in the second tertile to climb up to the richest tertile and vice versa. Yet, we structured our economy in a way that allows movement only between the individuals at the edge of the tertile, so the transition matrices fail to adequately represent the movement of the typical person in the tertile.
 
 This simple example shows that standard measures of economic mobility represent aggregate values of the changes in the wealth rankings of the individuals which constitute the population between two time periods. Therefore, they rely on a relevant time period for which the wealth rankings are compared. A rank correlation of 0.3 would have a different meaning if it corresponds to a period of one year or ten years. Also, for a given time period, it is not possible to tell whether some value of rank correlation is high or low, as this is a dimensionless quantity. Thus, rank correlation over some time period can only be high or low in comparison to other economies over a similar time period, or to other time periods of the same length.
-
-The standard measures do not quantify the mobility of the typical representative of the population. In our simplified economy the bottom tertile is perfectly immobile. Regardless of the rank correlation value, it is not representative of the dynamics of wealth of individuals belonging to this tertile.
-
-In addition, quantifying mobility using the transition matrix (and deriving various functionals of it as mobility indicators), implicitly assumes the Markov property -- that if transition matrix $\mathbf{A}$ represents the period between $t_1$ and $t_2$ and $\mathbf{B}$ the period between $t_2$ and $t_3$, then $\mathbf{A B}$ would represent the transition matrix between $t_1$ and $t_3$. This is not inline with empirical findings \citep{Mcfarland1970,Clark2015}.
-
+The standard measures do not quantify the mobility of the typical representative of the population. In our simplified economy the bottom tertile is perfectly immobile. Regardless of the rank correlation value, it is not representative of the dynamics of wealth of individuals belonging to this tertile. In addition, quantifying mobility using the transition matrix (and deriving various functionals of it as mobility indicators), implicitly assumes the Markov property -- that if transition matrix $\mathbf{A}$ represents the period between $t_1$ and $t_2$ and $\mathbf{B}$ the period between $t_2$ and $t_3$, then $\mathbf{A B}$ would represent the transition matrix between $t_1$ and $t_3$. This is not inline with empirical findings \citep{Mcfarland1970,Clark2015}.
 \FloatBarrier
-
 \section{Mixing time as a measure of mobility}
-
 %\subsection{What is a mixing time?}\label{sec:what}
-
-The concept of mixing times from probability theory and statistical physics can be used as a measure for mobility. It allows overcoming the limitations discussed above. A mixing time would provide a characteristic time scale over which individuals mix into the wealth distribution. Figuratively, we can think of the economy as a cup of coffee and of some person's wealth as milk poured in the coffee. The mixing time quantifies the time required for the milk to blend with the coffee. This enables the measure to be used for appropriate comparison between different time periods and economies.
-
+The concept of mixing time comes from probability theory and statistical physics. It allows overcoming the limitations discussed above. A mixing time would provide a characteristic time scale over which individuals mix into the wealth distribution. Figuratively, we can think of the economy as a cup of coffee and of some person's wealth as milk poured in the coffee. The mixing time quantifies the time required for the milk to blend with the coffee. This enables the measure to be used for appropriate comparison between different time periods and economies.
 As we will see in the following sections, there is a relationship between the mixing time and standard mobility measures, whenever mixing time is a finite quantity. However, the standard measures may still indicate that there is some level of mobility even when mixing does not occur (\ie the mixing time is infinite). This is because mixing time depends on the existence of mobility between \textit{every} quantile in the wealth distribution. In other words, finite mixing times require wealth ranks to be ergodic, and we will argue that in the absence of ergodicity, mobility cannot be properly defined.\footnote{This idea was already described by \citet{Mcfarland1970}.}
 
 \subsection{Measuring mixing times}
-
 In physical terms, mixing describes the property of a dynamical system of being strongly intertwined. That is, for any set of particles moving according to the laws of some dynamical system, regardless of their initial condition, and after a sufficient period of time, the mixing time, the fraction of the particles found within a particular region in the phase space (the space of the variable $x$ characterizing the particles, which can be their wealth in our case), is proportional to the volume of that region in the phase space.
-
 Mixing is strongly related to the concept of ergodicity. However, the latter is a broader concept: An observable $x$ is said to be ergodic if its time-average is to its ensemble averages at any given time. Put differently, ergodicity implies that every trajectory spreads around the phase space according to the steady state distribution of $x$. Hence, every dynamical system that is mixing is also ergodic, but the opposite is not necessarily true.
 
-\YB{Why it makes sense to use it as a measure of mobility? How does it overcome the limitations?}
+%\YB{Why it makes sense to use it as a measure of mobility? How does it overcome the limitations?}
+\textcolor{red}{In economics terms, mixing implies that there always exists a stationary distribution to which some rescaled transformation of a person's wealth converges. This, subsequently, indicates that mobility between every possible quantile in the population will exist. In this sense, mixing time gives an estimate for the relevant time-scale for this kind of mobility to be feasible. It overcomes the limitations of the standard measures in several ways. First, it is measured in temporal units, thus allowing for deriving conclusions regarding the extent of mobility in an economy without requiring comparisons to other economies and/or to other time periods. Second, mixing time will be a finite quantity only when each individual is able to move across the whole distribution of wealth. Therefore, it does not represent an aggregate measure of the mobility in the economy, and instead evaluates the feasibility of the typical representative of the population to change its wealth status. Lastly, mixing time does not follow the mathematical assumptions of the standard measures of mobility, thus allowing for distinct statistical properties of the stationary wealth distribution over time.}
 
-In a mixing economy there is always a stationary distribution to which some rescaled transformation of a person's wealth converges. This property can be utilized to develop an estimation procedure for mixing time.~\fref{mixing-time} gives an example for how to estimate mixing time.
 
-\YB{Elaborate on the figure. Also -- why is there an initial plateau?}
+
+%\YB{Elaborate on the figure. Also -- why is there an initial plateau?}
+\textcolor{red}{The described properties of a mixing economy can be utilized to develop an estimation procedure for mixing time.
+In particular, the first step in estimating the mixing time is setting a target distribution to which the rescaled transformation of wealth converges. In reality, it is difficult to recognize the exact form of this distribution as it depends on the wealth dynamics which may be highly random. As a crude estimate, one should use a stationary distribution to which an approximate form of the wealth dynamics converges. Once a stationary distribution is chosen, it is necessary to select a subsample of the population which represent the typical representatives in the population. For example, these can be the persons whose wealth is closest to either the mean/median/mode wealth, depending on the properties of the stationary distribution.}
+
+\textcolor{red}{The next step involves tracking the wealth dynamics of each person in the subsample for a sufficient amount of time, and, at certain time points, quantifying the differences between the subsample and the stationary wealth distribution. This can be done by utilizing usual statistical distribution distance measures such as the Kullblack-Leibler divergence, the Hellinger distance or the Kolmogorov-Smirnov statistic. In a mixing economy the statistic will exhibit two states.  First, there will be a mixing time state during which the two distributions will slowly converge towards each other, and the statistic will slowly decrease. After this state, there will be a stable state with no significant differences between the stationary and subsample wealth distributions.}
+
+\textcolor{red}{The last step is to utilize the data only for the mixing time state and estimate the slope of the regression in which the dependent variable is the log of the statistic an the independent is time. Mixing time is the additive inverse of the reciprocal value of the slope ($-1 / slope$).}
+
+\textcolor{red}{~\fref{mixing-time} summarizes the procedure. In it, with the blue line we plot the log of an arbitrary distance statistic as a function of time, whereas the black dashed line gives the regression line for the relationship between the statistic and time during the three different states. The inset plots provide snapshots for the wealth distrbibution of the subsample at different time points (red dashed lines). For comparison, the snapshots also include the form of the selected stationary distribution (black line).}
 
 %whereas the formal procedure is as follows:
 %%
@@ -321,17 +318,14 @@ In a mixing economy there is always a stationary distribution to which some resc
 \begin{figure}[!htb]
 \centering
 \includegraphics[width=1.0\textwidth]{figs/fig_mixing_time.pdf}
-\caption{\textbf{Estimating mixing time.} \underline{Blue line:} The log of the statistical distance between the subsample and population wealth distributions. \textbf{Black dash-dotted line:} Estimated slope of the regression of the log of the statistic on time. \underline{Inset plots:} Snapshots of the empirical population wealth distribution (black line) and the subsample wealth distribution (red dashed line) at time periods $t_1$, $t_2$,$t_3$ and $t_4$. \label{fig:mixing-time}}
+\caption{\textbf{Estimating mixing time.} \underline{Blue line:} The log of the statistical distance between the subsample and population wealth distributions. \textbf{Black dash-dotted line:} Estimated slope of the regression of the log of the statistic on time. \underline{Inset plots:} Snapshots of the empirical population wealth distribution (black line) and the subsample wealth distribution (red dashed line) at time periods $t_1$, $t_2$,$t_3$ and $t_4$.  \label{fig:mixing-time}}
 \end{figure}
 
 \FloatBarrier
-
 \section{Mixing time in a simple model of an economy}\label{sec:rgbm}
-
 \subsection{Reallocating geometric Brownian motion}
 
 To illustrate the application of mixing time in economic systems, we use Reallocating geometric Brownian motion (RGBM) as a simple model for wealth dynamics~\citep{BermanPetersAdamou2019}.
-
 Under RGBM, the dynamics of the wealth of person $i$ is specified as
 %
 \be
@@ -340,19 +334,18 @@ Under RGBM, the dynamics of the wealth of person $i$ is specified as
 \ee
 %
 with $\mu > 0$ being the drift term, $\sigma > 0$ the noise amplitude, and $\mathrm{d}W_i$ is an independent Wiener increment, $W_i(t) =\int_0^t \mathrm{d}W_i$. $\tau$ is a parameter that quantifies the reallocation of wealth. It implies that every $\mathrm{d}t$, everyone in the economy contributes a fraction $\tau\mathrm{d}t$ of their wealth to a central pool. The pool is then shared equally across the population ($\langle x \rangle_N$ is per-capita wealth). The parameter aggregates a multitude of effects, \eg collective investment in infrastructure, education, social programs, taxation, rents paid, or private profits.
+The dynamic behavior of RGBM is strictly dependent on the relation between $\tau$ and $\sigma$, and can be both ergodic and non-ergodic. Since the existence of mixing is predicated on ergodic dynamics, we focus on the ergodic regime. \textcolor{red}{In RGBM, for large enough population, the transition to this regime approximately occurs when $\tau > \frac{\sigma^2}{2}$.}
 
-The dynamic behavior of RGBM is strictly dependent on the relation between $\tau$ and $\sigma$, and can be both ergodic and non-ergodic. Since the existence of mixing is predicated on ergodic dynamics, we focus on the ergodic regime. RGBM is in this regime when $\tau > \frac{\sigma^2}{2}$.
-\YB{I don't think this is true. Where is the N-dependence?}
+%\YB{I don't think this is true. Where is the N-dependence?}
 
 Then, the model exhibits mean-reversion as each $x_i$ reverts to the population average $\langle x \rangle_N$. The large population approximation $\langle x(t) \rangle_N = \exp \left[\mu t\right]$ is valid, and it can be used to write a mean field equation for the dynamics of the rescaled wealth $y_i = x_i / \langle x \rangle_N$ as
 %
 \be
-    d y =   y \sigma d W - \tau (y - 1) dt\,.
+    \mathrm{d} y =   y \sigma  \mathrm{d} W - \tau (y - 1)  \mathrm{d}t\,.
     \label{eq:rescaled-rgbm}
 \ee
 %
-
-\YB{Small comment -- sometimes d in equations is with mathrm and sometimes without -- make it all the same}
+%\YB{Small comment -- sometimes d in equations is with mathrm and sometimes without -- make it all the same}
 
 Notice that the mean field representation leads to decoupling of the dynamics of each individual $i$, and hence we can neglect the subscript $i$ in equation~\eref{rescaled-rgbm}. This is a convenient form of RGBM which allows for deriving powerful analytical results regarding the properties of the model. For instance, we can derive the stationary distribution for the rescaled wealth, which reads
 %
@@ -365,7 +358,6 @@ where $\theta = 1 + \frac{2 \tau}{\sigma^2}$ and $\Gamma(\cdot)$ is the Gamma fu
 resembling Pareto's often confirmed observation that the frequency of large wealths tends to decay as a power law. The exponent of the power law, $\theta$, is called the Pareto tail parameter, and can be used as a measure of economic inequality~\citep{Cowell2011}. More importantly, the usual stylized facts are recovered: the larger $\sigma$ (more randomness in the dynamics) and the smaller $\tau$ (less reallocation), the smaller the tail index and the fatter the tail of the distribution (higher inequality).
 
 \subsection{Mixing time in RGBM}
-
 In RGBM, mixing time can be analytically estimated from its correlation function,
 %
 \be
@@ -374,9 +366,7 @@ In RGBM, mixing time can be analytically estimated from its correlation function
 \ee
 %
 This function measures the statistical relation between observations of rescaled wealth at two different time points $t$ and $t-\delta$. 
-
 In a mixing economy the subsample distribution will eventually converge to the same distribution as the one of the whole population. Therefore, we can reduce our analysis to simply studying the convergence time of the subsample distribution to the stationary distribution. Moreover, since in RGBM the dynamics of rescaled wealth of each individual are decoupled, we can further reduce the analysis to examining the convergence time of the process described with~\eref{rescaled-rgbm} to the stationary distribution (\eref{rgbm-stationary-distribution}).
-
 This can be done by defining the time period $t^*$ as the transition point at which the distribution of rescaled wealth converges to the stationary distribution. Then, we can rewrite correlation function terms of this period as,
 %
 \be
@@ -393,7 +383,6 @@ for any time period $t$ that belongs to the mixing time state. Obviously, the ma
 which implies that the mixing time in RGBM is $1/\tau$. The interpretation behind this result is fairly intuitive -- in an economy in which reallocation from the rich to the poor is larger, there will be also more mixing. On the other hand, as the reallocation rate approaches zero, mixing times get longer, and mobility lower. Since decreasing reallocation rates also lead to increasing inequality, this result is in line with the empirical observations which suggests that as inequality increases mobility decreases, and vice versa~\citep{corak2013}. \Fref{rgbm-mixing-time} compares our analytical expression with numerical simulations.
 
 %where mixing time was estimated through the procedure described in Section 3.2. In the estimation procedure we chose Kolmogorov-Smirnov statistic as a statistical distance measure.
-
 \begin{figure}[!htb]
 \centering
 \includegraphics[width=0.7\textwidth]{figs/fig_mixing_time_rgbm.png}
@@ -402,9 +391,7 @@ which implies that the mixing time in RGBM is $1/\tau$. The interpretation behin
 \end{figure}
 
 \FloatBarrier
-
 \subsection{Mixing time and standard measures of mobility}\label{sec:measures}
-
 Unlike the mixing time, the standard measures mobility in RGBM depend on the noise amplitude $\sigma$, and not only on $\tau$. This is a consequence of the randomness playing a significant role in the wealth dynamics when we consider time frames that are shorter than the mixing time. In what follows we evaluate the relationship between mixing time and the standard measures of mobility in RGBM.
 
 \paragraph{Spearman's rank correlation:} In the ergodic regime of RGBM the Spearman's rank correlation is inversely related to the mixing time. However, the rank correlation is also dependent on the noise amplitude $\sigma$ and the temporal difference $\delta$ between the two periods that are being compared. Larger values for both parameters lead to a greater economic mobility. This can be seen in~\fref{rgbm-standard-measures}A where we plot the additive inverse of log of the rank correlation divided by $\delta$ as a function of $\tau$ for various noise amplitudes.
@@ -415,24 +402,18 @@ Unlike the mixing time, the standard measures mobility in RGBM depend on the noi
 \caption{\textbf{Mixing time and standard measures of economic mobility.} \textbf{A)} Log of the Spearman's rank correlation divided by the temporal difference as a function of $\tau$. \textbf{B)} Same as \textbf{A)}, only on the y axis is the log of the Intragenerational earnings elasticity. \textbf{C)} Same as \textbf{A)}, only on the y axis is the log of the GMFPT. \textbf{A-C} The line colors correspond to the magnitude of the noise amplitude, as highlighted by the colormap. In the simulation, $\delta = 20$ and $N = 10^4$.
 \label{fig:rgbm-standard-measures}}
 \end{figure}
-
 \FloatBarrier
 
 \paragraph{Intragenerational earnings elasticity:} 
-Identically to the properties of the Spearman Rank correlation and as evidenced in~\fref{rgbm-standard-measures}B, the Intragenerational earnings elasticity is also dependent on both the noise amplitude and the magnitude of reallocation. \textcolor{red}{The approximate mathematical relationship between the intragenerational earnings elasticity and mixing time is studied in the Appendix.}
-
+Identically to the properties of the Spearman Rank correlation and as evidenced in~\fref{rgbm-standard-measures}B, the Intragenerational earnings elasticity is also dependent on both the noise amplitude and the magnitude of reallocation.
+\textcolor{red}{The approximate mathematical relationship between the intragenerational earnings elasticity and mixing time is studied in the Appendix.}
 %In RGBM, once the dynamics reaches a stationary state, the variance of $y(t)$ is invariant on time, \ie, the variances term in equation~(\ref{eq:iee-estimation}) cancel out. Hence, the  intergenerational earnings elasticity reduces simply to the correlation between observations corresponding to two different time periods as given by equation~(\ref{eq:rgbm-correlation}). In other words, the only difference between mixing time and the intragenerational earnings elasticity is the shift in the magnitude of the later due to the dependence on the time period over which it is estimated. This finding is confirmed in Fig.~\ref{fig:rgbm-iee}, where we show the log of the stationary intragenerational earnings elasticity normalized for the time frame $\delta$ as a function of the parameter $\tau$ and vary $\sigma^2$.
-
 \paragraph{Transition matrices:} As the transition matrix divides the wealth distribution into $Q$ quantiles, it gives us a total of $Q^2$ measures for mobility, each quantifying the relationship between pairs of quantiles. Instead of studying each of those measures, we will focus on one aggregate quantity called the Global Mean First Passage Time (GMFPT). Formally, the mean first passage time (MFPT) between quantiles $k$ and $l$ gives an estimate of the time required for an individual whose wealth belongs to quantile $k$ to move to quantile $l$, and the GMFPT is the average across all possible MFPT pairs. By construction, this quantity is measured in the same units as mixing time, and as such it can give us a direct relation between the properties of the standard measures and mixing time in RGBM.
-
 As inferred from \fref{rgbm-standard-measures}C, the behavior of the transition matrices is similar to the one of the previous two measures. In other words, it is dependent on both the noise amplitude and the temporal differences between the periods for which it is estimated. However, differently from the previous measures it appears that there is no linear transformation for the relationship between GMFPT and the mixing time.
 
 \subsection{The Great Gatsby curve in RGBM}
-
 We now turn our attention to applying mixing times in studying the relationship between mobility and inequality. A convenient illustration of this relationship is the Great Gatsby curve, which describes the association between inequality and the intergenerational earnings elasticity across countries~\citep{krueger2012rise,corak2013}. The curve represents a simple two-dimensional visualization where on the x-axis is given the static inequality and on the y-axis the economic mobility. It was first introduced in a talk by Krueger~\cite{krueger2012rise}, who showed empirically using country level data that economic \textit{immobility} and static inequality are  positively and linearly related.
-
 Formally, static inequality is defined as the extent of concentration in the distribution of wealth among the population. Hence, various measures which quantify the dispersion of the stationary distribution~\eref{rgbm-stationary-distribution} can be used to evaluate this concept in RGBM. Here, we use the most widely used measure, the Gini coefficient.
-
 %The coefficient can be represented using the stationary cumulative distribution function $\mathrm{F}(y)$ of the wealth as
 %%
 %\be
@@ -440,7 +421,6 @@ Formally, static inequality is defined as the extent of concentration in the dis
 %\ee
 %%
 %A Gini coefficient of zero expresses perfect equality, where all values are the same (for example, where everyone has the same wealth), whereas a Gini coefficient of one expresses maximal inequality among values (e.g., for a large number of people, where only one person has all the wealth, and all others have none).
-
 \fref{rgbm-great-gatsby} displays mixing time as a function of the Gini index in RGBM. RGBM appropriately reproduces empirical observations by suggesting that inequality and immobility are positively related~\citep{krueger2012}. However, in RGBM the relationship is nonlinear and it looks like an inverted sigmoid curve.
 
 \begin{figure}[!htb]
@@ -451,20 +431,42 @@ Formally, static inequality is defined as the extent of concentration in the dis
 \end{figure}
 
 \section{Discussion}
-
 \begin{itemize}
-    \item maybe merge figs 4-6 into one figure
     \item comment on non-ergodicity
-    \item comment relationship with inequality
     \item comment on real data?
 \end{itemize}
-
 \textcolor{red}{In a non-ergodic economy mixing time will exist, but under a suitable transformation of the wealth variable. }
-
 \section{Conclusion}\label{sec:conclusion}
 \bibliography{../LML_bibliography/bibliography}
 %\clearpage
 %\appendix
 %\section{}\label{app:appA}
 \end{document}
+
+\appendix
+\section{Derivation of IEE in RGBM}
+
+As a measure, the intergenerational earnings elasticity is determined by the dynamics of the log of (rescaled) wealth $z = \log(y)$. Using Ito calculus, we can recover the following equation for the dynamics of $z$,
+\begin{align*}
+    d z &= \tau \bigg( \exp(-z) - \frac{2\tau + \sigma^2}{2 \tau} \bigg) dt + \sigma dW.
+\end{align*}
+
+The stationary distribution of the process can be found by using the transformation law of probabilities, 
+\begin{align}
+    P_z(z) &= P_y\big(\exp(z)\big) \exp(z).
+\end{align}
+
+The first and second moment of this distribution are
+\begin{align}
+\langle z \rangle &= -\psi(\theta) + \log(\theta - 1), \\
+\langle z^2 \rangle &= \psi^{(1)}(\theta) + \bigg( \psi^{(1)}(\theta) - \log(\theta-1)\bigg)^2.
+\end{align}
+
+See Dutre and Debosscher (1977) and Debosscher (1990) for the derivation of the transitory PDF of both $y$ and $z$.
+
+\bibliography{mixing-time}
+%\clearpage
+%\appendix
+%\section{}\label{app:appA}
+
 
