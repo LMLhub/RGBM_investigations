@@ -337,22 +337,23 @@ p(y) = \frac{(\theta - 1)^{\theta}}{\Gamma(\theta)} \exp{\big(-\frac{\theta - 1}
 where $\theta = 1 + \frac{2 \tau}{\sigma^2}$ and $\Gamma(\cdot)$ is the Gamma function. The distribution has a power-law tail as $y \to \infty$,
 resembling Pareto's often confirmed observation that the frequency of large wealths tends to decay as a power law. The exponent of the power law, $\theta$, is called the Pareto tail parameter, and can be used as a measure of economic inequality~\citep{Cowell2011}. More importantly, the usual stylized facts are recovered: the larger $\sigma$ (more randomness in the dynamics) and the smaller $\tau$ (less reallocation), the smaller the tail index and the fatter the tail of the distribution (higher inequality).
 
-\subsection{Stylized economic mobility facts reproduced by RGBM}
+%\subsection{Stylized economic mobility facts reproduced by RGBM}
 
-As said, standard mobility measures describe the properties of the bivariate joint wealth distribution in two points in time. Such distributions are usually modeled via copulas. Mathematically, a copula is a simple model for the wealth transition matrix which assumes that the entries of the matrix (quantile transition rates) are a result of their interdependence. Depending on the way the interdependence is manifested, various types of copulas have been utilized for describing the wealth transition matrix. The most widely used copulas in this aspect are the Gaussian and Gumbel copula. Modeling with the Gaussian results in a symmetric wealth transition matrix, whereas the Gumbel copula produces an asymmetric matrix. More precisely, under this copula the mobility between quantiles representing poorer individuals is much more frequent than the mobility between quantiles which represent richer individuals.
+%As said, standard mobility measures describe the properties of the bivariate joint wealth distribution in two points in time. Such distributions are usually modeled via copulas. Mathematically, a copula is a simple model for the wealth transition matrix which assumes that the entries of the matrix (quantile transition rates) are a result of their interdependence. Depending on the way the interdependence is manifested, various types of copulas have been utilized for describing the wealth transition matrix. The most widely used copulas in this aspect are the Gaussian and Gumbel copula. Modeling with the Gaussian results in a symmetric wealth transition matrix, whereas the Gumbel copula produces an asymmetric matrix. More precisely, under this copula the mobility between quantiles representing poorer individuals is much more frequent than the mobility between quantiles which represent richer individuals.
 
-A pervasive observation is that real wealth transition matrices are better modeled through the Gumbel copula exactly because of its asymmetric property \textcolor{red}{insert citations}. Indeed, empirical studies have argued that as a consequence of this the Gaussian copula
-tends to underestimate the dependence in the middle of the distribution, that is, the transition probabilities between the middle quantiles. 
+%A pervasive observation is that real wealth transition matrices are better modeled through the Gumbel copula exactly because of its asymmetric property \textcolor{red}{insert citations}. Indeed, empirical studies have argued that as a consequence of this the Gaussian copula tends to underestimate the dependence in the middle of the distribution, that is, the transition probabilities between the middle quantiles. 
 
-To investigate whether this observation is reproduced in RGBM in Fig.~\ref{ig:rgbm-copula-fits}A we show the steady wealth transition matrix in the ergodic regime of the model. Fig.~\ref{ig:rgbm-copula-fits}B and Fig.~\ref{ig:rgbm-copula-fits}C give, respectively, the Gaussian and Gumbel copulas that best fit the RGBM transition matrix. As evidenced, the transition matrix of RGBM reproduces the asymmetric property of the real world transition matrices, and thus it is better represented by the Gumbel copula. This suggests that RGBM might be a useful model for identifying viable policies which will contribute towards the resolution on the ongoing economic mobility issues. The proposal of using mixing time as an indication for the level of economic mobility in an economy is one of them.
+%To investigate whether this observation is reproduced in RGBM in Fig.~\ref{fig:rgbm-copula-fits}A we show the steady wealth transition matrix in the ergodic regime of the model. Fig.~\ref{fig:rgbm-copula-fits}B and Fig.~\ref{fig:rgbm-copula-fits}C give, respectively, the Gaussian and Gumbel copulas that best fit the RGBM transition matrix. As evidenced, the transition matrix of RGBM reproduces the asymmetric property of the real world transition matrices, and thus it is better represented by the Gumbel copula. This suggests that RGBM might be a useful model for identifying viable policies which will contribute towards the resolution on the ongoing economic mobility issues. The proposal of using mixing time as an indication for the level of economic mobility in an economy is one of them.
 
-\begin{figure}[!htb]
-\centering
-\includegraphics[width=1.0\textwidth]{figs/fig_rgbm_copulas.eps}
-\caption{\textbf{Stylized mobility facts in RGBM.} \textbf{A)} Steady state wealth transition matrix in RGBM. The wealth distribution is divided into deciles. \textbf{B)} Simulation for the wealth transition matrix using a Gaussian copula that best fits the RGBM transition matrix. The matrix is constructed by averaging 100 different Gaussian copula matrix realizations. \textbf{C)} Same as \textbf{B)}, only for a Gumbel Copula. \textbf{A-C} In the simulation, $\delta = 20$ and $N = 10^4$.
-\label{fig:rgbm-copula-fits}}
-\end{figure}
-\FloatBarrier
+%\begin{figure}[!htb]
+%\centering
+%\includegraphics[width=1.0\textwidth]{figs/fig_rgbm_copulas.eps}
+%\caption{\textbf{Stylized mobility facts in RGBM.} \textbf{A)} Steady state wealth transition matrix in RGBM. The wealth distribution is divided into deciles. \textbf{B)} Simulation for the wealth transition matrix using a Gaussian copula that best fits the RGBM transition matrix. The matrix is constructed by averaging 100 different Gaussian copula matrix realizations. \textbf{C)} Same as \textbf{B)}, only for a Gumbel Copula. \textbf{A-C} In the simulation, $\delta = 20$ and $N = 10^4$. \textbf{Include this figure in the previous figure!}
+%\label{fig:rgbm-copula-fits}}
+%\end{figure}
+%\FloatBarrier
+
+
 
 
 
@@ -405,8 +406,9 @@ Unlike the mixing time, the standard measures mobility in RGBM depend on the noi
 
 \begin{figure}[!htb]
 \centering
-\includegraphics[width=1.0\textwidth]{figs/fig_mixing_time_vs_standard_measures.eps}
-\caption{\textbf{Mixing time and standard measures of economic mobility.} \textbf{A)} Log of the Spearman's rank correlation divided by the temporal difference as a function of $\tau$. \textbf{B)} Same as \textbf{A)}, only on the y axis is the log of the Intragenerational earnings elasticity. \textbf{C)} Same as \textbf{A)}, only on the y axis is the log of the GMFPT. \textbf{A-C} In the simulation, $\delta = 20$ and $N = 10^4$.
+\includegraphics[width=1.0\textwidth]{figs/fig_gmfpt_rgbm_v2.eps}
+\caption{\textbf{Mixing time and standard measures of economic mobility.} \textbf{A)} Log of the Spearman's rank correlation divided by the temporal difference as a function of $\tau$. \textbf{B)} Same as \textbf{A)}, only on the y axis is the log of the Intragenerational earnings elasticity. %\textbf{C)} Same as \textbf{A)}, only on the y axis is the log of the GMFPT. \textbf{A-C} 
+\textbf{C)} Transition matrices for stationary regime of RGBM, in the top row we show estimates for $\tau = 0.01$, whereas in the results in the bottom row $\tau = 0.03$. The columns correspond to different noise amplitudes. In particular in the first column $\sigma^2 = 0.005$, in the second column $\sigma^2 = 0.03$ and in the third columns $\sigma^2 = 0.055$. \textbf{A-B} In the simulations, $\delta = 20$ and $N = 10^4$.
 \label{fig:rgbm-standard-measures}}
 \end{figure}
 \FloatBarrier
@@ -415,8 +417,20 @@ Unlike the mixing time, the standard measures mobility in RGBM depend on the noi
 Identically to the properties of the Spearman Rank correlation and as evidenced in~\fref{rgbm-standard-measures}B, the Intragenerational earnings elasticity is also dependent on both the noise amplitude and the magnitude of reallocation.
 %\textcolor{red}{The approximate mathematical relationship between the intragenerational earnings elasticity and mixing time is studied in the Appendix.}
 %In RGBM, once the dynamics reaches a stationary state, the variance of $y(t)$ is invariant on time, \ie, the variances term in equation~(\ref{eq:iee-estimation}) cancel out. Hence, the  intergenerational earnings elasticity reduces simply to the correlation between observations corresponding to two different time periods as given by equation~(\ref{eq:rgbm-correlation}). In other words, the only difference between mixing time and the intragenerational earnings elasticity is the shift in the magnitude of the later due to the dependence on the time period over which it is estimated. This finding is confirmed in Fig.~\ref{fig:rgbm-iee}, where we show the log of the stationary intragenerational earnings elasticity normalized for the time frame $\delta$ as a function of the parameter $\tau$ and vary $\sigma^2$.
-\paragraph{Transition matrices:} As the transition matrix divides the wealth distribution into $Q$ quantiles, it gives us a total of $Q^2$ measures for mobility, each quantifying the relationship between pairs of quantiles. Instead of studying each of those measures, we will focus on one aggregate quantity called the Global Mean First Passage Time (GMFPT). Formally, the mean first passage time (MFPT) between quantiles $k$ and $l$ gives an estimate of the time required for an individual whose wealth belongs to quantile $k$ to move to quantile $l$, and the GMFPT is the average across all possible MFPT pairs. By construction, this quantity is measured in the same units as mixing time, and as such it can give us a direct relation between the properties of the standard measures and mixing time in RGBM.
-As inferred from \fref{rgbm-standard-measures}C, the behavior of the transition matrices is similar to the one of the previous two measures. In other words, it is dependent on both the noise amplitude and the temporal differences between the periods for which it is estimated. However, differently from the previous measures it appears that there is no linear transformation for the relationship between GMFPT and the mixing time.
+\paragraph{Transition matrices:} 
+
+
+
+
+As the transition matrix divides the wealth distribution into $Q$ quantiles, it gives us a total of $Q^2$ measures for mobility, each quantifying the relationship between pairs of quantiles. 
+As inferred from \fref{rgbm-standard-measures}C, the behavior of the transition matrices is similar to the one of the previous two measures. In other words, it is dependent on both the noise amplitude and the rate of reallocation, as well as the temporal differences between the periods for which it is estimated. The mobility across quantile increases as both the noise amplitude and the reallocation parameter increase.
+
+Moreover,as previously elaborated, standard mobility measures describe the properties of the bivariate joint wealth distribution in two points in time. Such distributions are usually modeled via copulas. Mathematically, a copula is a simple model for the wealth transition matrix which assumes that the entries of the matrix (quantile transition rates) are a result of their interdependence. Depending on the way the interdependence is manifested, various types of copulas have been utilized for describing the wealth transition matrix. The most widely used copulas in this aspect are the Gaussian and Gumbel copula. Modeling with the Gaussian results in a symmetric wealth transition matrix, whereas the Gumbel copula produces an asymmetric matrix. More precisely, under this copula the mobility between quantiles representing poorer individuals is much more frequent than the mobility between quantiles which represent richer individuals.
+
+A pervasive observation is that real wealth transition matrices are better modeled through the Gumbel copula exactly because of its asymmetric property \textcolor{red}{insert citations}. Indeed, empirical studies have argued that as a consequence of this the Gaussian copula
+tends to underestimate the dependence in the middle of the distribution, that is, the transition probabilities between the middle quantiles. 
+
+As evidenced in~\fref{rgbm-standard-measures}C, the transition matrix of RGBM reproduces the asymmetric property of the real world transition matrices, and thus it is better represented by the Gumbel copula. This suggests that RGBM might be a useful model for identifying viable policies which will contribute towards the resolution on the ongoing economic mobility issues. The proposal of using mixing time as an indication for the level of economic mobility in an economy is one of them.
 
 \subsection{The Great Gatsby curve in RGBM}
 We now turn our attention to applying mixing times in studying the relationship between mobility and inequality. A convenient illustration of this relationship is the Great Gatsby curve, which describes the association between inequality and the intergenerational earnings elasticity across countries~\citep{krueger2012rise,corak2013}. The curve represents a simple two-dimensional visualization where on the x-axis is given the static inequality and on the y-axis the economic mobility. It was first introduced in a talk by Krueger~\cite{krueger2012rise}, who showed empirically using country level data that economic \textit{immobility} and static inequality are  positively and linearly related.
@@ -458,29 +472,80 @@ While the presented method offers an inexpensive way for quantifying mixing time
 \paragraph{Spearman's rank correlation:} Spearman's rank correlation is defined on a joint distribution of wealth at two points in time, $t_m$ and $t_n$ ($t_m < t_n$). It is defined as
 %
 \be
-    r_{t_m,t_n} = 1 - \frac{6\sum_i \left[rg\left(x_i\left(t_m\right)\right) - rg\left(x_i\left(t_n\right)\right)\right]^2}{N\left(N^2-1\right)}\,,
+    r_{t_m,t_n} = 1 - \frac{6\sum_i \left[rg\left(\mathrm{x}_i\left(t_m\right)\right) - rg\left(\mathrm{x}_i\left(t_n\right)\right)\right]^2}{N\left(N^2-1\right)}\,,
 \ee
 %
-where $rg(x)$ is the rank transformation of $x$, $x_i(t)$ is the wealth of individual $i$ in period $t$ and $N$ is the population size. This measure is bounded between $-1$ and $1$. $r_{t_m,t_n} = 1$ suggests perfect immobility, a state in which there is no change in wealth ranks between the two points in time. Lower values suggest greater economic mobility.
+where $rg(\mathrm{x})$ is the rank transformation of $\mathrm{x}$, $\mathrm{x}_i(t)$ is the wealth of individual $i$ in period $t$ and $N$ is the population size. This measure is bounded between $-1$ and $1$. $r_{t_m,t_n} = 1$ suggests perfect immobility, a state in which there is no change in wealth ranks between the two points in time. Lower values suggest greater economic mobility.
 
 \paragraph{Intragenerational earnings elasticity:} The intragenerational earnings elasticity is defined as the slope $b_{t_m,t_n}$ of the regression
 %
 \be
-   \log\left(x_i\left(t_n\right)\right) = b_0 + b_{t_m,t_n} \log\left(x_i\left(t_m\right)\right) + u_i\,,
+   \log\left(\mathrm{x}_i\left(t_n\right)\right) = b_0 + b_{t_m,t_n} \log\left(\mathrm{x}_i\left(t_m\right)\right) + u_i\,,
 \ee
 %
 where $b_0$ is the intercept and $u_i$ is the error term. This is a simple linear regression and therefore,
 %
 \be
-    b_{t_m,t_n} = \mathrm{corr}\left(\log\left(x\left(t_n\right)\right),\log\left(x\left(t_m\right)\right)\right) \frac{\mathrm{var}\left(\log\left(x\left(t_n\right)\right)\right)}{\mathrm{var}\left(\log\left(x\left(t_m\right)\right)\right)}\,,
+    b_{t_m,t_n} = \mathrm{corr}\left(\log\left(\mathrm{x}\left(t_n\right)\right),\log\left(\mathrm{x}\left(t_m\right)\right)\right) \frac{\mathrm{var}\left(\log\left(\mathrm{x}\left(t_n\right)\right)\right)}{\mathrm{var}\left(\log\left(\mathrm{x}\left(t_m\right)\right)\right)}\,,
     \label{eq:iee-estimation}
 \ee
 %
-where $\mathrm{corr}(x,y)$ is the correlation between the variables $x$ and $y$ and $\mathrm{var}(x)$ is the variance of $x$. As with the rank correlation, lower intragenerational earnings elasticity also indicates greater mobility. However, this measure is unbounded and may take on any real values.
+where $\mathrm{corr}(\mathrm{x},\mathrm{y})$ is the correlation between the variables $\mathrm{x}$ and $\mathrm{y}$ and $\mathrm{var}(\mathrm{x})$ is the variance of $\mathrm{x}$. As with the rank correlation, lower intragenerational earnings elasticity also indicates greater mobility. However, this measure is unbounded and may take on any real values.
 
 \paragraph{Wealth transition matrix:} The wealth transition matrix disaggregates wealth rankings and summarizes economic mobility in a
 transition matrix $\mathbf{A}$ in which the elements $A_{kl}$ quantify the probability that an individual in wealth quantile $k$ in period $t_m$ is found in wealth quantile $l$ in period $t_n$. In a perfectly mobile economy, the entries of the transition matrix are all equal to each other. This would correspond to $0$ rank correlation. In an immobile economy, on the other hand, the largest values are concentrated in the diagonal entries. A perfectly immobile case, of rank correlation $1$, would correspond to the identity transition matrix.
+
+\section{Numerical presentation of Mixing time}\label{sec:rgbm-correlation-function}
+
+- estimate mixing time in RGBM 
+
+- present figures for the relation between sample and subsample sizes (the estimation of mixing time is dependent on them)
+
+\section{Derivation of the correlation function in RGBM}\label{sec:rgbm-correlation-function}
+
+The autocorrelation function $\mathrm{corr}(\mathrm{x}(t), \mathrm{x}(t+\delta))$ of a stochastic process is simply the Pearson correlation between observables of the process corresponding to two different time points $t$ and $t+\delta$, 
+\be
+    \mathrm{corr}(\mathrm{x}(t), \mathrm{x}(t+\delta)) = \frac{\mathrm{cov}(\mathrm{x}(t), \mathrm{x}(t+\delta))}{\sqrt{\mathrm{var}(\mathrm{x}(t))} \sqrt{\mathrm{var}(\mathrm{x}(t+\delta))}},
+    \label{eq:autocorrelation}
+\ee
+where $\mathrm{cov}(\mathrm{x}, \mathrm{y})$ is the covariance between $\mathrm{x}$ and $\mathrm{y}$.
+
+Eq.~\eqref{eq:rgbm-correlation} gives the autocorrelation in the stationary regime of RGBM, that is, when $t \to \infty$. In this case the variance of the process corresponding to different time points is the same. Thus, for the denominator of~\eqref{eq:autocorrelation} in RGBM we have,
+\be
+   \sqrt{\mathrm{var}(y(t))} \sqrt{\mathrm{var}(y(t+\delta))} = \mathrm{var(y(t))} = \mathrm{var(y(t+\delta))} = \frac{\sigma^2}{2\tau - \sigma^2}.
+    \label{eq:rgbm-variance}
+\ee
+The right hand side of Eq.~\eqref{eq:rgbm-variance} can be easily derived using Ito calculus (see~\citet{BermanPetersAdamou2019}).
+
+The derivation of the autocovariance function present in the numerator of~\eqref{eq:rgbm-correlation} is a bit more tricky. A standard way for estimating such functions is by utilizing the eigenfunctions $\psi(\lambda,\mathrm{x})$ and eigenvalues $\lambda$ of the Fokker-Planck equation corresponding to the stochastic process~\cite{}. Once, they are inferred, the autocovariance function can be found as
+\be
+\mathrm{cov}(\mathrm{x}(t), \mathrm{x}(t+\delta)) = \sum_n g_n^2 \exp\left[ -\lambda_n \delta \right] + \int g(\lambda)\exp\left[ -\lambda \delta \right],
+\label{eq:covariance-stochastic-process}
+\ee
+where with the subscript $n$ we denote the discrete spectrum of the system, and
+\be
+g = \int \mathrm{x} \psi(\lambda,\mathrm{x}) d\mathrm{x}.
+\ee
+In RGBM, it turns out that all $g$'s are 0, except the one corresponding to the first eigenvalue of the discrete spectrum. The value of this eigenvalue is simply $\tau$ and the corresponding eigenfunction is~\cite{LiuSerota2017}
+\be
+\psi_1(\lambda_1,y) = \frac{\exp\left[\frac{-2\tau}{\sigma^2 y}\right](y-1) (\frac{2\tau}{y \sigma^2})^{2+\frac{2\tau}{\sigma^2}}}{(\frac{2\tau}{\sigma^2})^2\sqrt{\Gamma (\frac{2\tau}{\sigma^2}) \Gamma (\frac{2\tau}{\sigma^2}-1})}.
+\label{eq:eigenfunction-rgbm}
+\ee
+This results in
+\be
+g_1 = \frac{1}{\sqrt{\frac{2\tau}{\sigma^2}-1}}.
+\label{eq:g-rgbm}
+\ee
+Combining~\eqref{eq:g-rgbm} with~\ref{eq:covariance-stochastic-process} we get that the covariance in RGBM is
+\be
+\mathrm{cov}(y(t), t(t+\delta)) = \frac{\exp\left[-\tau \delta\right]}{\frac{2\tau}{\sigma^2}-1}.
+\label{eq:rgbm-covariance}
+\ee
+Inserting~\eqref{eq:rgbm-variance} and~\eqref{eq:rgbm-covariance} we recover the RGBM correlation function~\eqref{eq:rgbm-correlation}.
+
+\bibliography{mixing-time}
 \end{document}
+
 
 \appendix
 \section{Derivation of IEE in RGBM}
@@ -503,7 +568,7 @@ The first and second moment of this distribution are
 
 See Dutre and Debosscher (1977) and Debosscher (1990) for the derivation of the transitory PDF of both $y$ and $z$.
 
-\bibliography{mixing-time}
+
 %\clearpage
 %\appendix
 %\section{}\label{app:appA}
