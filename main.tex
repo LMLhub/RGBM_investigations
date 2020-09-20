@@ -237,7 +237,7 @@ The paper is organized as follows. In~\Sref{standard-masures} we present the lim
 \section{Standard measures of economic mobility}\label{sec:standard-masures}
 
 
-We begin with an overview of the limitations of the standard measures of economic mobility. These measures describe properties of the bivariate joint wealth distribution in two points in time. To characterize the limitations we utilize two widely used measures of economic mobility: Spearman's rank correlation and the intragenerational earnings elasticity. We also use the wealth transition matrix, or copula, from which various mobility measures can be derived. The mathematical background of the measures is given in Appendix~\ref{sec:standard-mobility-measures}.
+We begin with an overview of the limitations of the standard measures of economic mobility. These measures describe properties of the bivariate joint wealth distribution in two points in time. To characterize the limitations we utilize two widely used measures of economic mobility: Spearman's rank correlation and the IGE. We also use the wealth transition matrix, or copula, from which various mobility measures can be derived. The mathematical background of the measures is given in Appendix~\ref{sec:standard-mobility-measures}.
 
 
 \subsection{Limitations}
@@ -246,7 +246,7 @@ To visualize the limitations of the standard measures, in \fref{standard-mobilit
 \begin{figure}[!htb]
 \centering
 \includegraphics[width=1.0\textwidth]{figs/fig_mobility_measures.pdf}
-\caption{\textbf{Mobility measures in a simplified example.} \textbf{A)} Dynamics of the wealth rankings in a simplified economy consisting of 9 individuals, during 3 time periods. \textbf{B)} Estimated Spearman's rank correlation and intragenerational earnings elasticity during the studied periods. \textbf{C)} The corresponding mobility transition matrices. \textbf{D)} The distribution of wealth for the 3 time periods.
+\caption{\textbf{Mobility measures in a simplified example.} \textbf{A)} Dynamics of the wealth rankings in a simplified economy consisting of 9 individuals, during 3 time periods. \textbf{B)} Estimated Spearman's rank correlation and IGE during the studied periods. \textbf{C)} The corresponding mobility transition matrices. \textbf{D)} The distribution of wealth for the 3 time periods.
 \label{fig:standard-mobility-measures}}
 \end{figure}
 
@@ -400,37 +400,43 @@ which gives the same result for the mixing time.% RGBM is $1/\tau$. The interpre
 
 \FloatBarrier
 \subsection{Mixing time and standard measures of mobility}\label{sec:measures}
-Unlike the mixing time, the standard measures mobility in RGBM depend on the noise amplitude $\sigma$, and not only on $\tau$. This is a consequence of the randomness playing a significant role in the wealth dynamics when we consider time frames that are shorter than the mixing time. In what follows we evaluate the relationship between mixing time and the standard measures of mobility in RGBM.
+Unlike the mixing time, the standard measures mobility in RGBM depend on the noise amplitude $\sigma$, and not only on $\tau$. This is a consequence of the randomness playing a significant role in the wealth dynamics when we consider time frames that are shorter than the mixing time. In what follows we evaluate the relationship between mixing time and the standard measures of mobility in RGBM. A more detailed analysis in terms of the relationship between the standard measures of economic mobility, the noise amplitude and the temporal difference is given in Appendix~\Sref{properties-standard-mobility-measures}.
 
 \paragraph{Spearman's rank correlation:} In the ergodic regime of RGBM the Spearman's rank correlation is inversely related to the mixing time. However, the rank correlation is also dependent on the noise amplitude $\sigma$ and the temporal difference $\delta$ between the two periods that are being compared. Larger values for both parameters lead to a greater economic mobility. This can be seen in~\fref{rgbm-standard-measures}A where we plot the additive inverse of log of the rank correlation divided by $\delta$ as a function of $\tau$ for various noise amplitudes.
 
 \begin{figure}[!htb]
 \centering
-\includegraphics[width=1.0\textwidth]{figs/fig_gmfpt_rgbm_v2.eps}
-\caption{\textbf{Mixing time and standard measures of economic mobility.} \textbf{A)} Log of the Spearman's rank correlation divided by the temporal difference as a function of $\tau$. \textbf{B)} Same as \textbf{A)}, only on the y axis is the log of the Intragenerational earnings elasticity. %\textbf{C)} Same as \textbf{A)}, only on the y axis is the log of the GMFPT. \textbf{A-C} 
-\textbf{C)} Transition matrices for stationary regime of RGBM, in the top row we show estimates for $\tau = 0.01$, whereas in the results in the bottom row $\tau = 0.03$. The columns correspond to different noise amplitudes. In particular in the first column $\sigma^2 = 0.005$, in the second column $\sigma^2 = 0.03$ and in the third columns $\sigma^2 = 0.055$. \textbf{A-B} In the simulations, $\delta = 20$ and $N = 10^4$.
+\includegraphics[width=1.0\textwidth]{figs/fig_rgbm_standard_measures.eps}
+\caption{\textbf{Mixing time and standard measures of economic mobility.} \textbf{A)} Log of the Spearman's rank correlation divided by the temporal difference as a function of $\tau$. \textbf{B)} Same as \textbf{A)}, only on the y axis is the log of the IGE. %\textbf{C)} Same as \textbf{A)}, only on the y axis is the log of the GMFPT. \textbf{A-C} 
+\textbf{A-B} In the simulations, $\delta = 20$ and $N = 10^4$.
 \label{fig:rgbm-standard-measures}}
 \end{figure}
 \FloatBarrier
 
 \paragraph{Intragenerational earnings elasticity:} 
-Identically to the properties of the Spearman Rank correlation and as evidenced in~\fref{rgbm-standard-measures}B, the Intragenerational earnings elasticity is also dependent on both the noise amplitude and the magnitude of reallocation.
+Identically to the properties of the Spearman Rank correlation and as evidenced in~\fref{rgbm-standard-measures}B, the IGE is also dependent on both the noise amplitude and the magnitude of reallocation.
 %\textcolor{red}{The approximate mathematical relationship between the intragenerational earnings elasticity and mixing time is studied in the Appendix.}
 %In RGBM, once the dynamics reaches a stationary state, the variance of $y(t)$ is invariant on time, \ie, the variances term in equation~(\ref{eq:iee-estimation}) cancel out. Hence, the  intergenerational earnings elasticity reduces simply to the correlation between observations corresponding to two different time periods as given by equation~(\ref{eq:rgbm-correlation}). In other words, the only difference between mixing time and the intragenerational earnings elasticity is the shift in the magnitude of the later due to the dependence on the time period over which it is estimated. This finding is confirmed in Fig.~\ref{fig:rgbm-iee}, where we show the log of the stationary intragenerational earnings elasticity normalized for the time frame $\delta$ as a function of the parameter $\tau$ and vary $\sigma^2$.
 \paragraph{Transition matrices:} 
 
 
-
-
 As the transition matrix divides the wealth distribution into $Q$ quantiles, it gives us a total of $Q^2$ measures for mobility, each quantifying the relationship between pairs of quantiles. 
-As inferred from \fref{rgbm-standard-measures}C, the behavior of the transition matrices is similar to the one of the previous two measures. In other words, it is dependent on both the noise amplitude and the rate of reallocation, as well as the temporal differences between the periods for which it is estimated. The mobility across quantile increases as both the noise amplitude and the reallocation parameter increase.
+As inferred from \fref{rgbm-wealth-matrices}, the behavior of the transition matrices is similar to the one of the previous two measures. In other words, it is dependent on both the noise amplitude and the rate of reallocation, as well as the temporal differences between the periods for which it is estimated. The mobility across quantile increases as both the noise amplitude and the reallocation parameter increase.
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=1.0\textwidth]{figs/fig_rgbm_copulas.eps}
+\caption{\textbf{Mixing time and wealth transition matrices.}  Transition matrices for stationary regime of RGBM, in the top row we show estimates for $\tau = 0.01$, whereas in the results in the bottom row $\tau = 0.03$. The columns correspond to different noise amplitudes. In particular in the first column $\sigma^2 = 0.005$, in the second column $\sigma^2 = 0.03$ and in the third columns $\sigma^2 = 0.055$. In the simulations, $\delta = 20$ and $N = 10^4$.
+\label{fig:rgbm-wealth-matrices}}
+\end{figure}
+\FloatBarrier
 
 Moreover,as previously elaborated, standard mobility measures describe the properties of the bivariate joint wealth distribution in two points in time. Such distributions are usually modeled via copulas. Mathematically, a copula is a simple model for the wealth transition matrix which assumes that the entries of the matrix (quantile transition rates) are a result of their interdependence. Depending on the way the interdependence is manifested, various types of copulas have been utilized for describing the wealth transition matrix. The most widely used copulas in this aspect are the Gaussian and Gumbel copula. Modeling with the Gaussian results in a symmetric wealth transition matrix, whereas the Gumbel copula produces an asymmetric matrix. More precisely, under this copula the mobility between quantiles representing poorer individuals is much more frequent than the mobility between quantiles which represent richer individuals.
 
 A pervasive observation is that real wealth transition matrices are better modeled through the Gumbel copula exactly because of its asymmetric property~\cite{jantti2015income}. Indeed, empirical studies have argued that as a consequence of this the Gaussian copula
 tends to underestimate the dependence in the middle of the distribution, that is, the transition probabilities between the middle quantiles. 
 
-As evidenced in~\fref{rgbm-standard-measures}C, the transition matrix of RGBM reproduces the asymmetric property of the real world transition matrices, and thus it is better represented by the Gumbel copula. This suggests that RGBM might be a useful model for identifying viable policies which will contribute towards the resolution on the ongoing economic mobility issues. The proposal of using mixing time as an indication for the level of economic mobility in an economy is one of them.
+As evidenced in~\fref{rgbm-wealth-matrices}, the transition matrix of RGBM reproduces the asymmetric property of the real world transition matrices, and thus it is better represented by the Gumbel copula. This suggests that RGBM might be a useful model for identifying viable policies which will contribute towards the resolution on the ongoing economic mobility issues. The proposal of using mixing time as an indication for the level of economic mobility in an economy is one of them.
 
 \subsection{The Great Gatsby curve in RGBM}
 We now turn our attention to applying mixing times in studying the relationship between mobility and inequality. A convenient illustration of this relationship is the Great Gatsby curve, which describes the association between inequality and the intergenerational earnings elasticity across countries~\citep{krueger2012,corak2013}. The curve represents a simple two-dimensional visualization where on the x-axis is given the static inequality and on the y-axis the economic mobility. It was first introduced in a talk by Krueger~\cite{krueger2012}, who showed empirically using country level data that economic \textit{immobility} and static inequality are  positively and linearly related.
@@ -490,20 +496,20 @@ where $b_0$ is the intercept and $u_i$ is the error term. This is a simple linea
     \label{eq:iee-estimation}
 \ee
 %
-where $\mathrm{corr}(\mathrm{x},\mathrm{y})$ is the correlation between the variables $\mathrm{x}$ and $\mathrm{y}$ and $\mathrm{var}(\mathrm{x})$ is the variance of $\mathrm{x}$. As with the rank correlation, lower intragenerational earnings elasticity also indicates greater mobility. However, this measure is unbounded and may take on any real values.
+where $\mathrm{corr}(\mathrm{x},\mathrm{y})$ is the correlation between the variables $\mathrm{x}$ and $\mathrm{y}$ and $\mathrm{var}(\mathrm{x})$ is the variance of $\mathrm{x}$. As with the rank correlation, lower IGE also indicates greater mobility. However, this measure is unbounded and may take on any real values.
 
 \paragraph{Wealth transition matrix:} The wealth transition matrix disaggregates wealth rankings and summarizes economic mobility in a
 transition matrix $\mathbf{A}$ in which the elements $A_{kl}$ quantify the probability that an individual in wealth quantile $k$ in period $t_m$ is found in wealth quantile $l$ in period $t_n$. In a perfectly mobile economy, the entries of the transition matrix are all equal to each other. This would correspond to $0$ rank correlation. In an immobile economy, on the other hand, the largest values are concentrated in the diagonal entries. A perfectly immobile case, of rank correlation $1$, would correspond to the identity transition matrix.
 
 \section{Numerical presentation of Mixing time}\label{sec:rgbm-numerical-mixing-time}
 
-We use RGBM to numerically present the procedure described in~\Sref{mixing-time}. In the concrete example, we focus on the role of the subsample size, $\tau$ and $\sigma$ in the duration of the mixing time period and the estimation of the mixing time measure. For this purpose, in~\Fref{rgbm-mixing-time} we plot the log of Kolmogorov-Smirnov (KS) statistic as a function time and vary the subsample size, reallocation rate and the noise amplitude. Intuitively, the reallocation rate has the major role in determining the mixing time, whereas the noise amplitude has no effect, as argued in~\Sref{rgbm}. However, it appears that the subsample size critically determines the behavior of the transient regime in the system. While this initial finding is interesting, we believe that its exact properties are out of the scope of the paper.
+We use RGBM to numerically present the procedure described in~\Sref{mixing-time}. In the concrete example, we focus on the role of the subsample size, $\tau$ and $\sigma$ in the duration of the mixing time period and the estimation of the mixing time measure. For this purpose, in~\Fref{rgbm-mixing-time}A-B we plot the log of Kolmogorov-Smirnov (KS) statistic as a function time and vary the subsample size, reallocation rate and the noise amplitude. Intuitively, the reallocation rate uniquely determines the mixing time, whereas the noise amplitude has no effect, as argued in~\Sref{rgbm}. However, it appears that the subsample size critically determines the behavior of the stable state in the system as it determines the value of the stationary KS statistic (\Fref{rgbm-mixing-time}C). This is because the estimation of the KS statistic relies on the differences between the empirical distribution function and the cumulative distribution function for the target stationary wealth distribution. Due to the subsample size always being a finite number, in empirical calculations, there will be differences between the empirical distribution and the target distribution, which will be translated in a positive KS statistic. As the subsample size increases, in the limit as the subsample size goes towards infinity, the differences will disappear.
 
 
 \begin{figure}[!htb]
 \centering
 \includegraphics[width=1.0\textwidth]{figs/fig_mixing_time_rgbm.eps}
-\caption{\textbf{Mixing time in RGBM.} The figure shows the log of KS statistic as a function of time for a realization of an RGBM process with a population size of $10^6$. The two panels correspond to different subsample sizes used for the estimation of the KS statistic ($10^4$ and $10^5$). The black lines are estimates with $\tau = 0.01$ and the black lines are with $\tau = 0.02$. Similarly, the dashed lines are estimated with $\sigma^2 = 0.01$ and the dotted lines with $\sigma^2  =0.015$. \label{fig:rgbm-mixing-time}}
+\caption{\textbf{Mixing time in RGBM.} \textbf{A)} Log of KS statistic as a function of time for a realization of an RGBM process with a subsample size of $10^4$ for different noise amplitudes and reallocation parameters. \textbf{B)} Same as \textbf{A)}, only with a subsample size of $10^5$. \textbf{C)} The log of the stationary KS statistic as a function of the subsample size for various $\sigma^2$ and $\tau$. In the simulations $N = 10^6$. \label{fig:rgbm-mixing-time}}
 \end{figure}
 
 \section{Derivation of the correlation function in RGBM}\label{sec:rgbm-correlation-function}
@@ -547,6 +553,32 @@ Combining~\eqref{eq:g-rgbm} with~\ref{eq:covariance-stochastic-process} we get t
 \label{eq:rgbm-covariance}
 \ee
 Inserting~\eqref{eq:rgbm-variance} and~\eqref{eq:rgbm-covariance} we recover the RGBM correlation function~\eqref{eq:rgbm-correlation}.
+
+\section{Properties of standard mobility measures in RGBM}\label{sec:properties-standard-mobility-measures}
+
+In this section we investigate in greater detail the relationship between $\sigma$ and $\delta$ and the standard measures of economic mobility in the ergodic regime of RGBM. For this reason we conduct two numerical experiments where we explore the stationary behavior of the Spearman correlation and IGE. 
+
+In the first experiment, we study the association between the standard measures of mobility and the noise amplitude $\sigma$. \Fref{rgbm-standard-measures-sigma} gives the results. From \Fref{rgbm-standard-measures-sigma}A-B we infer that that the Spearman correlation and IGE are approximately linearly related with $\sigma^2/2$ when they are, respectively, transformed as $-\tau - \frac{\log(\rho(t,t+\delta))}{\delta}$ and $-\tau - \frac{\log(b_{(t,t+\delta))}}{\delta}$. The marginal effect of $\tau$ on the slope of the relationship is shown in \Fref{rgbm-standard-measures-sigma}C. Obviously, as $\tau$ increases the slope decreases linearly.
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=1.0\textwidth]{figs/fig_rgbm_sigma_relationship.eps}
+\caption{\textbf{Relationship between the noise amplitude and standard measures of economic mobility.} \textbf{A)} Difference between $-\tau$ and the log of the Spearman's rank correlation divided by the temporal difference as a function of $\sigma^2/$. \textbf{B)} Same as \textbf{A)}, only on the y axis is the difference between $-\tau$ and the log of the IGE. \textbf{C)} Slope of the lines presented in \textbf{A-B}, as a function of $\tau$. 
+\textbf{A-C} In the simulations, $\delta = 20$ and $N = 10^4$.
+\label{fig:rgbm-standard-measures-sigma}}
+\end{figure}
+\FloatBarrier
+
+In the same same fashion, in \Fref{rgbm-standard-measures-delta} we examine the effect of the magnitude of the temporal difference on the Spearman correlation and the IGE. As indicated in \Fref{rgbm-standard-measures-delta}, $\delta$ is approximately linearly related with the Spearman correlation and IGE when their transformations are $\frac{-\log(\rho(t,t+\delta))}{\tau + \frac{\sigma^2}{2}}$ and $\frac{\log(b_{(t,t+\delta))}}{\delta}$. In this case, increments in the reallocation parameter have a positive impact on the slope of the relationship.
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=1.0\textwidth]{figs/fig_rgbm_delta_relationship.eps}
+\caption{\textbf{Relationship between the temporal difference and standard measures of economic mobility.} \textbf{A)} Additive inverse of the logarithm of the Spearman correlation divided by $\tau +\frac{\sigma^2}{2}$ as a function of $\delta$. \textbf{B)} Same as \textbf{A)}, only on the y axis only for the logarithm of IGE. \textbf{C)} Slope of the lines presented in \textbf{A-B}, as a function of $\tau$. 
+\textbf{A-C} In the simulations, $\delta = 20$ and $N = 10^4$.
+\label{fig:rgbm-standard-measures-delta}}
+\end{figure}
+\FloatBarrier
 
 
 \end{document}
