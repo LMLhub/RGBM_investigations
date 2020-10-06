@@ -342,38 +342,14 @@ The autocorrelation function for the rescaled wealth in the ergodic regime of RG
 \ee
 %
 A detailed derivation of the autocorrelation function is given in Appendix~\ref{sec:rgbm-correlation-function}. Obviously, the rate of correlation decay is simply the reallocation rate, which implies that the mixing time in RGBM is $1/\tau$. The interpretation behind this result is fairly intuitive -- in an economy in which reallocation from the rich to the poor is stronger, mixing is faster. On the other hand, as the reallocation rate approaches zero, mixing times get longer, and mobility lower.
-%Since decreasing reallocation rates also lead to increasing inequality, this result is in line with the empirical observations which suggests that as inequality increases mobility decreases, and vice versa \citep{corak2013}.
 
-Notice that the mixing time in RGBM can be alternately derived by using our procedure for its estimation. Concretely, in a mixing economy the subsample distribution will eventually converge to the same distribution as the one of the whole population. Therefore, the analysis can be reduced to simply studying the convergence time of the subsample distribution to the stationary distribution. Moreover, since in RGBM the dynamics of rescaled wealth of each individual are decoupled, we can further reduce the analysis to examining the convergence time of the process described with~\eref{rescaled-rgbm} to the stationary distribution (\eref{rgbm-stationary-distribution}). This can be done by defining the time period $t^*$ as the transition point at which the distribution of rescaled wealth converges to the stationary distribution. Then, we can rewrite correlation function terms of this period as,
-%
-\be
-    \mathrm{corr(y(t^*), y(t))} = \exp\left[ -\tau (t^* -t)\right]\,,
-    %\label{eq:rgbm-correlation}
-\ee
-%
-for any time period $t$ that belongs to the mixing time state. The magnitude of any statistical measure $S(t)$ will be proportional to the value of this correlation, and its log will be of the form
-%
-\be
-    \log (S(t)) \propto  - \tau (t^*-t)\,,
-\ee
-%
-which gives the same result for the mixing time.
-\YB{Is the last paragraph necessary?}
-
-% RGBM is $1/\tau$. The interpretation behind this result is fairly intuitive -- in an economy in which reallocation from the rich to the poor is larger, there will be also more mixing. On the other hand, as the reallocation rate approaches zero, mixing times get longer, and mobility lower. Since decreasing reallocation rates also lead to increasing inequality, this result is in line with the empirical observations which suggests that as inequality increases mobility decreases, and vice versa \cite{corak2013}. %\Fref{rgbm-mixing-time} compares our analytical expression with numerical simulations.
-%where mixing time was estimated through the procedure described in Section 3.2. In the estimation procedure we chose Kolmogorov-Smirnov statistic as a statistical distance measure.
-%\begin{figure}[!htb]
-%\centering
-%\includegraphics[width=0.7\textwidth]{figs/fig_mixing_time_rgbm.png}
-%\caption{Mixing time in RGBM. \textcolor{red}{Describe the figure.}
-%\label{fig:rgbm-mixing-time}}
-%\end{figure}
+The mixing time in RGBM can also be estimated using the estimation procedure described above. If a subsample of the population is considered, its distribution will converge to the steady state distribution of the whole population (when $\tau > 0$). The reciprocal of the convergence rate is the mixing time (see \fref{mixing-time}), and will also be equal to $1/\tau$
 
 \subsection{Mixing time and standard measures of mobility}\label{sec:measures}
 
-In RGBM, unlike the mixing time, standard measures of mobility depend on the noise amplitude $\sigma$, and not only on $\tau$. This is a consequence of the randomness playing a significant role in the wealth dynamics when we consider time frames that are shorter than the mixing time.
-\YB{Actually, this intuition is not clear to me. Why wouldn't $\sigma$ influence the mixing time, but will affect the rank correlation?. I understand that this is how it is, but the intuition is unclear.}
-In what follows we describe the relationship between mixing time and the standard measures of mobility in RGBM.
+In RGBM, unlike the mixing time, standard measures of mobility depend on the noise amplitude $\sigma$, and not only on $\tau$. This is a consequence of the randomness playing a significant role in the wealth dynamics when we consider time frames that are shorter than the mixing time. In what follows we describe the relationship between mixing time and the standard measures of mobility in RGBM.
+
+%\YB{Actually, this intuition is not clear to me. Why wouldn't $\sigma$ influence the mixing time, but will affect the rank correlation?. I understand that this is how it is, but the intuition is unclear.}
 
 \paragraph{Spearman's rank correlation:} Spearman's rank correlation is inversely related to the mixing time in RGBM. The rank correlation is also dependent on the noise amplitude $\sigma$ and the temporal difference $\delta$ between the two periods that are being compared. Larger values for both parameters lead to a greater economic mobility. This can be seen in~\fref{rgbm-standard-measures}A where we plot the additive inverse of log of the rank correlation divided by $\delta$ as a function of $\tau$ for various noise amplitudes.
 
