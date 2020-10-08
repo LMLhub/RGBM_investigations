@@ -352,11 +352,11 @@ A pervasive observation is that real wealth transition matrices are better model
 
 As evidenced in~\fref{rgbm-wealth-matrices}A, the transition matrices in RGBM reproduce the asymmetric property of the real world transition matrices and are well-approximated by the Gumbel copula (\fref{rgbm-wealth-matrices}B). The major advantage of modeling through the Gumbel copula is that, this copula is uniquely identified by one parameter $\theta>1$ governing the strength of dependence of the ordering of observations between two periods. A larger value of the parameter indicates larger dependence between the observations. In our terms, larger dependence implies less mobility.
 
-In \fref{rgbm-wealth-matrices}C we visualize the relationship between $\theta$ and the reallocation parameter $\tau$ for various noise amplitudes. We find that there is an inverse relationship between $\theta$ and $\tau$, whose slope is determined by the magnitude of $\sigma$. As $\tau$ increases, the value of the $\theta$ decreases, though disproportionately. We hereby point out that there is a direct relationship between $\theta$ and the Spearman correlation which can be seen in \fref{rgbm-wealth-matrices}D.
+In \fref{rgbm-wealth-matrices}C we visualize the relationship between $\theta$ and the reallocation parameter $\tau$ for various noise amplitudes. We find that there is an inverse relationship between $\theta$ and $\tau$, whose slope is determined by the magnitude of $\sigma$. As $\tau$ increases, the value of the $\theta$ decreases, though disproportionately. We hereby point out that the $\theta$ parameter and the Spearman correlation share a direct relationship which cannot be analytically represented. As a way to visualize this relationship in \fref{rgbm-wealth-matrices}D we plot the Spearman correlation as a function of $\tau$.
 
 \begin{figure}[!htb]
 \centering
-%\includegraphics[width=1.0\textwidth]{figs/fig_rgbm_gumbel_v2.eps}
+\includegraphics[width=1.0\textwidth]{figs/fig_rgbm_gumbel_v2.eps}
 \caption{\textbf{Mixing time and wealth transition matrices.} \textbf{A)} Transition matrix for the stationary regime of RGBM estimated with $\tau = 0.02$, $\sigma^2 = 0.01$ and $N = 10^4$. \textbf{B)} An example for a transition matrix from data simulated from a Gumbel copula whose parameter $\theta$ is chosen to be in accordance with the RGBM parameters used in \textbf{A)}. \textbf{C)} The relationship between the Gumbel copula parameter $\theta$ and the reallocation parameter $\tau$ in the stable state of RGBM. \textbf{D)} The relationship between the Gumbel copula parameter $\theta$ and the Spearman correlation $\rho$ in the stable state of RGBM. The parameters were estimated from a transition matrix in which $\delta = 20$ and $N = 10^4$.
 \label{fig:rgbm-wealth-matrices}}
 \end{figure}
@@ -376,7 +376,7 @@ In RGBM the mixing time, quantifying immobility, is $1/\tau$. The Pareto tail pa
 
 \begin{figure}[!htb]
 \centering
-%\includegraphics[width=10cm]{figs/fig_great_gatsby.eps}
+\includegraphics[width=10cm]{figs/fig_great_gatsby.eps}
 \caption{\textbf{The Great Gatsby curve in RGBM.} Mixing time as a function of the inverse of the Pareto Tail coefficient in RGBM. The line colors correspond to the magnitude of the noise amplitude, as highlighted by the colormap.
 \label{fig:rgbm-great-gatsby}}
 \end{figure}
