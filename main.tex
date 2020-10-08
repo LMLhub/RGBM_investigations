@@ -260,30 +260,22 @@ As we will see in the following sections, there is a relationship between the mi
 
 \subsection{Measuring mixing times}
 
-In physical terms, mixing describes the property of a dynamical system being strongly intertwined. That is, for any set of particles moving according to the laws of some dynamical system, regardless of their initial condition, and after a sufficient period of time, the mixing time, the fraction of the particles found within a particular region in the phase space (the space of the variable $x$ characterizing the particles, which can be their wealth in our case), is proportional to the volume of that region in the phase space.
+In physical terms, mixing describes the property of a dynamical system being strongly intertwined. That is, in any set of particles in a dynamical system the fraction of the particles found within a particular region in the \textit{phase space} (the space of the variable $x$ characterizing the particles, wealth in our case), is proportional to the volume of that region in the phase space. If the system is mixing this occurs regardless of the particles initial condition, and after a sufficient period of time, the mixing time.
 
-Mixing is strongly related to the concept of ergodicity. However, the latter is a broader concept: An observable $x$ is said to be ergodic if its time-average is to its ensemble averages at any given time. Put differently, ergodicity implies that every trajectory spreads around the phase space according to the steady state distribution of $x$. Hence, every dynamical system that is mixing is also ergodic, but the opposite is not necessarily true.
+Mixing is strongly related to the concept of ergodicity. However, the latter is a broader concept: An observable $x$ is said to be ergodic if its time-average is to its ensemble averages at any given time. Put differently, ergodicity implies that every trajectory moves around the phase space over time according to the steady state distribution of $x$. Hence, every dynamical system that is mixing is also ergodic, but the opposite is not necessarily true.
 
-In economic terms, mixing implies that there always exists a stationary distribution to which some rescaled transformation of a person's wealth converges. It further indicates that mobility between every possible quantile in the population will exist. In this sense, mixing time gives an estimate for the relevant time-scale for this kind of mobility to be feasible.
+In economic terms, mixing implies that there always exists a stationary distribution to which some rescaled transformation of a person's wealth converges. It further indicates that mobility between every possible quantile in the population exists. The mixing time gives an estimate for the relevant time scale for this kind of mobility to occur.
 
-Mixing overcomes the limitations of the standard measures in several ways. First, it is measured in temporal units, thus allowing for deriving conclusions regarding the extent of mobility in an economy without requiring comparisons to other economies and/or to other time periods. Second, the mixing time will be a finite quantity only when each individual is able to move across the whole distribution of wealth. Therefore, it does not represent an aggregate measure of the mobility in the economy, and instead evaluates the feasibility of the typical representative of the population to change its wealth status.
+Using mixing times overcomes the limitations of the standard measures in several ways. First, the mixing time is measured in units of time. This means that when mixing is rapid, \ie the mixing time is short relative to the window of observation, we could interpret that as high wealth mobility. Slow mixing is interpreted as low mobility. This overcomes the necessity to define high or low mobility with respect to other countries or to the past. Second, the mixing time is a finite quantity only when each individual is able to move across the whole distribution of wealth. Therefore, it does not represent an aggregate measure of the mobility in the economy. It captures the feasibility of individuals to change their wealth status.
 
-%\textcolor{red}{The described properties of a mixing economy can be utilized to develop an estimation procedure for mixing time. In particular, the first step in estimating the mixing time is setting a target distribution to which the rescaled transformation of wealth converges. In reality, it is difficult to recognize the exact form of this distribution as it depends on the wealth dynamics which may be highly random. As a crude estimate, one should use a stationary distribution to which an approximate form of the wealth dynamics converges. Once a stationary distribution is chosen, it is necessary to select a subsample of the population which represent the typical representatives in the population. For example, these can be the persons whose wealth is closest to the median wealth, depending on the properties of the stationary distribution.}
-
-\textcolor{red}{The described properties of a mixing economy can be utilized to develop an estimation procedure for mixing time. In particular, the first step in estimating the mixing time is setting a target distribution to which the rescaled transformation of wealth converges. Once a stationary distribution is chosen, it is necessary to select a subsample of the population which represent the typical representatives in the population. For example, these can be the persons whose wealth is closest to the median wealth.}
-
-\textcolor{red}{The next step involves tracking the wealth dynamics within the subsample for a sufficient amount of time. At certain time points, the differences between the subsample and the stationary wealth distribution should be quantified using a statistical distribution distance measure such as the Kolmogorov-Smirnov statistic. In a realistic mixing economy the statistic will exhibit two states. First, there will be a mixing time state during which the two distributions will converge towards each other, and the statistic will decrease. After transitory state, there will be a stable state. The stable state is characterized with stationary dynamics in which the value of the log of the statistic reaches a plateau. The observations of the statistic will oscillate around this plateau. The magnitude of the plateau will be determined by the subsample size: smaller sample sizes will exhibit higher plateau and vice versa. This is a finite sample size effect.}
-%is due to the fact that that the subsample distribution represents an empirical histogram and thus it will not be as smooth as the probability density function of the target distribution.
-%As the subsample size increases, the empirical histogram will become smoother and the discrepancies with the target distribution will decrease. This obviously will translate in the magnitude of the plateau.
-
-\textcolor{red}{The last step is to utilize the data only for the mixing time state and regress the log of the statistic on time. Mixing time is the additive inverse of the reciprocal value of the slope ($-1/slope$).}
+The described properties of a mixing economy can also be utilized to develop an estimation procedure for mixing time. The first step is defining a target steady state distribution to which the rescaled transformation of wealth converges. We then select any subsample of the population and track their wealth, following the subsample wealth distribution over time, and quantify the difference between the subsample wealth distribution and the steady state distribution with a distance measure (\eg the Kolmogorov-Smirnov statistic). In a mixing economy the statistic will exhibit two states. First, there will be a mixing time state during which the two distributions will converge towards each other, and the statistic will decrease. After transitory state, there will be a stable state. The stable state is characterized with stationary dynamics in which the value of the log of the statistic reaches a plateau. The observations of the statistic will oscillate around this plateau. The magnitude of the plateau will be determined by the subsample size: smaller sample sizes will exhibit higher plateau and vice versa. This is a finite sample size effect. The last step is to utilize the data only for the mixing time state and regress the log of the statistic on time. The mixing time is the additive inverse of the reciprocal value of the slope ($-1/slope$).
 
 \Fref{mixing-time} summarizes the procedure. The blue line is the log of an arbitrary distance statistic such as the Kolmogorov-Smirnov as a function of time. The dashed black line is a regression line for the relationship between the statistic and time during the two different states. The inset plots provide snapshots for the wealth distribution of the subsample at different time points (red dashed lines). For comparison, the snapshots also include the form of the selected stationary distribution (black line). Notice that initially, at $t_1$, the subsample distribution is very narrow and does not resemble the stationary distribution. The wealths in the subsample evolve, and in $t_2$ and $t_3$ the subsample distribution becomes closer to the stationary distribution. Eventually, the subsample distribution converges to the stationary distribution. The mixing time is the time scale of the distribution convergence, \ie the slope of the regression line. In Appendix~\ref{sec:rgbm-numerical-mixing-time} we present an example for the implementation of the procedure in the RGBM model.
 
 \begin{figure}[!htb]
 \centering
 \includegraphics[width=1.0\textwidth]{figs/fig_mixing_time.pdf}
-\caption{\textbf{Estimating mixing time.} The blue line shows the log of the statistical distance between the subsample and the target wealth distribution. The black dashed line is the slope of the regression line which describes the relationship between the log of the statistical distance and time, estimated separately for the mixing time period and the sable state period. The inset plots give snapshots for the empirical form of subsample distribution (red dashed line) and the target distribution at different points in time $t_1 < t_2 < t_3 < t_4$.  %\underline{Blue line:} The log of the statistical distance between the subsample and population wealth distributions. \textbf{Black dash-dotted line:} Estimated slope of the regression of the log of the statistic on time. \underline{Inset plots:} Snapshots of the empirical population wealth distribution (black line) and the subsample wealth distribution (red dashed line) at time periods $t_1$, $t_2$, $t_3$ and $t_4$. 
+\caption{\textbf{Estimating mixing time.} The blue line shows the log of the statistical distance between the subsample and the target wealth distribution. The black dashed line is the slope of the regression line which describes the relationship between the log of the statistical distance and time, estimated separately for the mixing time period and the sable state period. The inset plots give snapshots for the empirical form of subsample distribution (red dashed line) and the target distribution at different points in time $t_1 < t_2 < t_3 < t_4$.
 \label{fig:mixing-time}}
 \end{figure}
 \FloatBarrier
@@ -300,7 +292,7 @@ To illustrate the application of mixing time in economic systems, we use Realloc
 %
 with $\mu > 0$ being the drift term, $\sigma > 0$ the fluctuations amplitude, and $\mathrm{d}W_i$ is an independent Wiener increment, $W_i(t) =\int_0^t \mathrm{d}W_i$. $\tau$ is a parameter that quantifies the reallocation of wealth. It implies that every time period $\mathrm{d}t$, everyone in the economy contributes a fraction $\tau\mathrm{d}t$ of their wealth to a central pool. The pool is then shared equally across the population ($\langle x \rangle_N$ is per-capita wealth). This parameter encapsulates multiple effects, \eg collective investment in infrastructure, education, social programs, taxation, rents paid, or private profits.
 
-Under RGBM, the average wealth in a large population grows like $e^{\mu t}$. Rescaling by $e^{\mu t}$, the dynamic behavior of RGBM is strictly dependent on the relation between $\tau$ and $\sigma$, and the rescaled wealth can be both ergodic and non-ergodic. Since the existence of mixing is predicated on ergodic dynamics, we focus on the ergodic regime.  In RGBM, rescaled wealth is ergodic when $\tau > 0$
+Under RGBM, the average wealth in a large population grows like $e^{\mu t}$. Rescaling by $e^{\mu t}$, the dynamic behavior of RGBM is strictly dependent on the relation between $\tau$ and $\sigma$, and the rescaled wealth can be both ergodic and non-ergodic. Since the existence of mixing is predicated on ergodic dynamics, we focus on the ergodic regime. In RGBM, rescaled wealth is ergodic when $\tau > 0$
 and the model exhibits mean-reversion as each $x_i$ reverts to the population average $\langle x \rangle_N$.
 
 The dynamics of the rescaled wealth $y_i = x_i / \langle x \rangle_N$ follow
@@ -317,19 +309,7 @@ p(y) = \frac{(\beta - 1)^{\beta}}{\Gamma(\beta)} \exp{\big(-\frac{\beta - 1}{y}\
 \label{eq:rgbm-stationary-distribution}
 \ee
 %
-where $\beta = 1 + \frac{2 \tau}{\sigma^2}$ and $\Gamma(\cdot)$ is the Gamma function. The distribution has a power-law tail as $y \to \infty$, resembling Pareto's often confirmed observation that the frequency of large wealths tends to decay as a power law. The exponent of the power law, $\beta$, is called the Pareto tail parameter, and can be used as a measure of economic inequality \citep{Cowell2011}. More importantly, the usual stylized facts are recovered: the larger $\sigma$ (more randomness in the dynamics) and the smaller $\tau$ (less reallocation), the smaller the tail index and the fatter the tail of the distribution (higher inequality).
-
-%\subsection{Stylized economic mobility facts reproduced by RGBM}
-%As said, standard mobility measures describe the properties of the bivariate joint wealth distribution in two points in time. Such distributions are usually modeled via copulas. Mathematically, a copula is a simple model for the wealth transition matrix which assumes that the entries of the matrix (quantile transition rates) are a result of their interdependence. Depending on the way the interdependence is manifested, various types of copulas have been utilized for describing the wealth transition matrix. The most widely used copulas in this aspect are the Gaussian and Gumbel copula. Modeling with the Gaussian results in a symmetric wealth transition matrix, whereas the Gumbel copula produces an asymmetric matrix. More precisely, under this copula the mobility between quantiles representing poorer individuals is much more frequent than the mobility between quantiles which represent richer individuals.
-%A pervasive observation is that real wealth transition matrices are better modeled through the Gumbel copula exactly because of its asymmetric property \textcolor{red}{insert citations}. Indeed, empirical studies have argued that as a consequence of this the Gaussian copula tends to underestimate the dependence in the middle of the distribution, that is, the transition probabilities between the middle quantiles. 
-%To investigate whether this observation is reproduced in RGBM in Fig.~\ref{fig:rgbm-copula-fits}A we show the steady wealth transition matrix in the ergodic regime of the model. Fig.~\ref{fig:rgbm-copula-fits}B and Fig.~\ref{fig:rgbm-copula-fits}C give, respectively, the Gaussian and Gumbel copulas that best fit the RGBM transition matrix. As evidenced, the transition matrix of RGBM reproduces the asymmetric property of the real world transition matrices, and thus it is better represented by the Gumbel copula. This suggests that RGBM might be a useful model for identifying viable policies which will contribute towards the resolution on the ongoing economic mobility issues. The proposal of using mixing time as an indication for the level of economic mobility in an economy is one of them.
-%\begin{figure}[!htb]
-%\centering
-%\includegraphics[width=1.0\textwidth]{figs/fig_rgbm_copulas.eps}
-%\caption{\textbf{Stylized mobility facts in RGBM.} \textbf{A)} Steady state wealth transition matrix in RGBM. The wealth distribution is divided into deciles. \textbf{B)} Simulation for the wealth transition matrix using a Gaussian copula that best fits the RGBM transition matrix. The matrix is constructed by averaging 100 different Gaussian copula matrix realizations. \textbf{C)} Same as \textbf{B)}, only for a Gumbel Copula. \textbf{A-C} In the simulation, $\delta = 20$ and $N = 10^4$. \textbf{Include this figure in the previous figure!}
-%\label{fig:rgbm-copula-fits}}
-%\end{figure}
-%\FloatBarrier
+where $\beta = 1 + \frac{2 \tau}{\sigma^2}$ and $\Gamma(\cdot)$ is the Gamma function. The distribution has a power-law tail as $y \to \infty$, resembling Pareto's often confirmed observation that the frequency of large wealths tends to decay as a power law. The exponent of the power law, $\beta$, is called the Pareto tail parameter, and can be used as a measure of economic equality \citep{Cowell2011}. More importantly, important stylized facts are recovered: the larger $\sigma$ (more randomness in the dynamics) and the smaller $\tau$ (less reallocation), the smaller the tail index and the fatter the tail of the distribution (higher inequality).
 
 \subsection{Mixing time in RGBM}
 
@@ -350,15 +330,12 @@ The mixing time in RGBM can also be estimated using the estimation procedure des
 
 In RGBM, unlike the mixing time, standard measures of mobility depend on the noise amplitude $\sigma$, and not only on $\tau$. This is a consequence of the randomness playing a significant role in the wealth dynamics when we consider time frames that are shorter than the mixing time. In what follows we describe the relationship between mixing time and the standard measures of mobility in RGBM.
 
-%\YB{Actually, this intuition is not clear to me. Why wouldn't $\sigma$ influence the mixing time, but will affect the rank correlation?. I understand that this is how it is, but the intuition is unclear.}
-
 \paragraph{Spearman's rank correlation:} Spearman's rank correlation is inversely related to the mixing time in RGBM. The rank correlation is also dependent on the noise amplitude $\sigma$ and the temporal difference $\delta$ between the two periods that are being compared. Larger values for both parameters lead to a greater economic mobility. This can be seen in~\fref{rgbm-standard-measures}A where we plot the additive inverse of log of the rank correlation divided by $\delta$ as a function of $\tau$ for various noise amplitudes.
 
 \begin{figure}[!htb]
 \centering
 \includegraphics[width=1.0\textwidth]{figs/fig_rgbm_standard_measures.eps}
-\caption{\textbf{Mixing time and standard measures of economic mobility.} \textbf{A)} Log of the Spearman's rank correlation divided by the temporal difference as a function of $\tau$. \textbf{B)} Same as \textbf{A)}, only on the y axis is the log of the IGE. %\textbf{C)} Same as \textbf{A)}, only on the y axis is the log of the GMFPT. \textbf{A-C} 
-\textbf{A-B} In the simulations, $\delta = 20$ and $N = 10^4$.
+\caption{\textbf{Mixing time and standard measures of economic mobility.} \textbf{A)} Log of the Spearman's rank correlation divided by the temporal difference as a function of $\tau$. \textbf{B)} Same as \textbf{A)}, only on the y axis is the log of the IGE. The simulations used $\delta = 20$ and $N = 10^4$.
 \label{fig:rgbm-standard-measures}}
 \end{figure}
 
@@ -374,44 +351,36 @@ As previously elaborated, the standard mobility measures describe the properties
 A pervasive observation is that real wealth transition matrices are better modeled through the Gumbel copula exactly because of its asymmetric property \citep{JanttiJenkins2015}. Indeed, empirical studies have argued that as a consequence of this the Gaussian copula tends to underestimate the dependence in the middle of the distribution, that is, the transition probabilities between the middle quantiles \citep{BonhommeRobin2009}. 
 
 As evidenced in~\fref{rgbm-wealth-matrices}A, the transition matrices in RGBM reproduce the asymmetric property of the real world transition matrices and are well-approximated by the Gumbel copula (\fref{rgbm-wealth-matrices}B). The major advantage of modeling through the Gumbel copula is that, this copula is uniquely identified by one parameter $\theta>1$ governing the strength of dependence of the ordering of observations between two periods. A larger value of the parameter indicates larger dependence between the observations. In our terms, larger dependence implies less mobility.
-%Thus, translating the RGBM parameters to the parameter of the Gumbel copula might be useful for identifying viable policies which will contribute towards implementing policies based on mixing time for the resolution on the ongoing economic mobility issues.
 
-In \fref{rgbm-wealth-matrices}C we visualize the relationship between $\theta$ and the reallocation parameter $\tau$ for various noise amplitudes. We find that there is an inverse relationship between $\theta$ and $\tau$, whose slope is determined by the magnitude of $\sigma$. As $\tau$ increases, the value of the $\theta$ decreases, though disproportionately. We hereby point out that there is a direct relationship between $\theta$ and the Spearman correlation which can be seen in \fref{rgbm-wealth-matrices}D. %This suggests that, when defining policies regarding economic mobility, and following the RGBM model, there might be an optimal trade-off depending on the current magnitude of reallocation: increments from these points onward will not increase mobility significantly. \YB{Maybe better to move this point to the discussion}
+In \fref{rgbm-wealth-matrices}C we visualize the relationship between $\theta$ and the reallocation parameter $\tau$ for various noise amplitudes. We find that there is an inverse relationship between $\theta$ and $\tau$, whose slope is determined by the magnitude of $\sigma$. As $\tau$ increases, the value of the $\theta$ decreases, though disproportionately. We hereby point out that there is a direct relationship between $\theta$ and the Spearman correlation which can be seen in \fref{rgbm-wealth-matrices}D.
 
 \begin{figure}[!htb]
 \centering
-\includegraphics[width=1.0\textwidth]{figs/fig_rgbm_gumbel_v2.eps}
-\caption{\textbf{Mixing time and wealth transition matrices.} \textbf{A)} Transition matrix for the stationary regime of RGBM estimated with $\tau = 0.02$, $\sigma^2 = 0.01$ and $N = 10^4$. \textbf{B)} An example for a transition matrix from data simulated from a Gumbel copula whose parameter $\theta$ is chosen to be in accordance with the RGBM parameters used in \textbf{A)}. \textbf{C)} The relationship between the Gumbel copula parameter $\theta$ and the reallocation parameter $\tau$ in the stable state of RGBM. \textbf{D)} The relationship between the Gumbel copula parameter $\theta$ and the Spearman correlation $\rho$ in the stable state of RGBM. The parameters were estimated from a transition matrix in which $\delta = 20$ and $N = 10^4$. %Transition matrices for stationary regime of RGBM, in the top row we show estimates for $\tau = 0.01$, whereas in the results in the bottom row $\tau = 0.03$. The columns correspond to different noise amplitudes. In particular in the first column $\sigma^2 = 0.005$, in the second column $\sigma^2 = 0.03$ and in the third columns $\sigma^2 = 0.055$. In the simulations, $\delta = 20$ and $N = 10^4$.
+%\includegraphics[width=1.0\textwidth]{figs/fig_rgbm_gumbel_v2.eps}
+\caption{\textbf{Mixing time and wealth transition matrices.} \textbf{A)} Transition matrix for the stationary regime of RGBM estimated with $\tau = 0.02$, $\sigma^2 = 0.01$ and $N = 10^4$. \textbf{B)} An example for a transition matrix from data simulated from a Gumbel copula whose parameter $\theta$ is chosen to be in accordance with the RGBM parameters used in \textbf{A)}. \textbf{C)} The relationship between the Gumbel copula parameter $\theta$ and the reallocation parameter $\tau$ in the stable state of RGBM. \textbf{D)} The relationship between the Gumbel copula parameter $\theta$ and the Spearman correlation $\rho$ in the stable state of RGBM. The parameters were estimated from a transition matrix in which $\delta = 20$ and $N = 10^4$.
 \label{fig:rgbm-wealth-matrices}}
 \end{figure}
 \FloatBarrier
 
 \subsection{The Great Gatsby curve in RGBM}
 
-We now turn our attention to applying mixing times in studying the relationship between mobility and inequality. A convenient illustration of this relationship is the Great Gatsby curve, which describes the association between inequality and the intergenerational earnings elasticity across countries \citep{krueger2012,corak2013}. It was first introduced in a talk by \citet{krueger2012}, who showed empirically using country level data that economic \textit{immobility} and static inequality are positively related.
+Quantifying mobility in RGBM using mixing times allows studying the relationship between mobility and inequality. A convenient illustration of this relationship is the Great Gatsby curve, which describes an association between inequality and the intergenerational earnings elasticity across countries \citep{krueger2012,corak2013}, showing that economic \textit{immobility} and static inequality are positively related across countries.
 
-%Formally, static inequality is defined as the extent of concentration in the distribution of wealth among the population. Hence, various measures which quantify the dispersion of the stationary distribution~\eref{rgbm-stationary-distribution} can be used to evaluate this concept in RGBM. Here, we use the most widely used measure, the Gini coefficient.
-%The coefficient can be represented using the stationary cumulative distribution function $\mathrm{F}(y)$ of the wealth as
-%%
-%\be
-%\texttt{Gini} = \int_0^{\infty} \mathrm{F}(y) \bigg( 1 - \mathrm{F}(y) \bigg)\,.
-%\ee
-%%
-%A Gini coefficient of zero expresses perfect equality, where all values are the same (for example, where everyone has the same wealth), whereas a Gini coefficient of one expresses maximal inequality among values (e.g., for a large number of people, where only one person has all the wealth, and all others have none).
-
-\Fref{rgbm-great-gatsby} displays mixing time as a function of the inverse of the Pareto tail parameter, which is a natural measure of inequality, in RGBM. This relationship can be easily analytically quantified, using the properties of RGBM, as
-\begin{align}
-    m &= \frac{\sigma^2}{2} \frac{1}{\beta-1},
-\end{align}
-where $m$ is the mixing time.
-RGBM appropriately reproduces the qualitative empirical observation, suggesting that inequality and immobility are positively related \citep{krueger2012}. %However, in RGBM the relationship is highly nonlinear, resembling an inverted sigmoid curve.
+In RGBM the mixing time, quantifying immobility, is $1/\tau$. The Pareto tail parameter is $\beta = 1 + \frac{2\tau}{\sigma^2}$ \citep{BermanPetersAdamou2019}, the inverse of which is a measure of inequality. We get that
+%
+\be
+\frac{1}{\tau} = \frac{2}{\sigma^2\left(\beta - 1\right)}\,.
+\ee
+%
+\fref{rgbm-great-gatsby} displays this relationship, demonstrating that RGBM reproduces the qualitative empirical observation, suggesting that inequality and immobility are positively related.
 
 \begin{figure}[!htb]
 \centering
-\includegraphics[width=10cm]{figs/fig_great_gatsby.eps}
+%\includegraphics[width=10cm]{figs/fig_great_gatsby.eps}
 \caption{\textbf{The Great Gatsby curve in RGBM.} Mixing time as a function of the inverse of the Pareto Tail coefficient in RGBM. The line colors correspond to the magnitude of the noise amplitude, as highlighted by the colormap.
 \label{fig:rgbm-great-gatsby}}
 \end{figure}
+
 \FloatBarrier
 
 \section{Discussion} \label{sec:discussion}
