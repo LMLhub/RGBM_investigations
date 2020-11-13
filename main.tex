@@ -186,6 +186,7 @@ urlcolor={blue!50!black}}
 %\ec
 \begin{abstract}
 \noindent Standard measures of economic mobility do not account for the possible non-ergodic income or wealth dynamics. Thus, they may not provide an adequate picture of mobility within an economy. Here we introduce mixing time as a measure of economic mobility. Mixing time quantifies the characteristic time scale over which individual incomes or wealths mix into the distribution. By construction, it is finite only in an ergodic system and then there is a direct equivalence between its value and the magnitude of the standard measures of economic mobility. On the other hand, the opposite is not true. Hence, measuring mobility using standard measures in a non-ergodic system may be misleading. We display the properties of mixing time by studying mobility in reallocating geometric Brownian motion -- an established model of wealth in a growing and reallocating economy.
+\\
 
 \noindent\textbf{Keywords: mobility, inequality, ergodicity economics}
 %\\
@@ -334,7 +335,7 @@ In RGBM, unlike the mixing time, standard measures of mobility depend on the noi
 \begin{figure}[!htb]
 \centering
 \includegraphics[width=1.0\textwidth]{figs/fig_rgbm_standard_measures.eps}
-\caption{\textbf{Mixing time and standard measures of economic mobility.} \textbf{A)} Log of the Spearman's rank correlation divided by the temporal difference as a function of $\tau$. \textbf{B)} Same as \textbf{A)}, only on the y axis is the log of the IGE. The simulations used $\delta = 20$ and $N = 10^4$.
+\caption{\textbf{Mixing time and standard measures of economic mobility.} \textbf{A)} Log of the Spearman's rank correlation divided by the temporal difference as a function of $\tau$. \textbf{B)} Same as \textbf{A)}, only on the y axis is the log of the IGE. The simulations used $\delta = 20$ years and $N = 10^4$ people.
 \label{fig:rgbm-standard-measures}}
 \end{figure}
 
@@ -356,7 +357,7 @@ In \fref{rgbm-wealth-matrices}C we visualize the relationship between $\theta$ a
 \begin{figure}[!htb]
 \centering
 \includegraphics[width=1.0\textwidth]{figs/fig_rgbm_gumbel_v2.eps}
-\caption{\textbf{Mixing time and wealth transition matrices.} \textbf{A)} Transition matrix for the stationary regime of RGBM estimated with $\tau = 0.02$, $\sigma^2 = 0.01$ and $N = 10^4$. \textbf{B)} An example for a transition matrix from data simulated from a Gumbel copula whose parameter $\theta$ is chosen to be in accordance with the RGBM parameters used in \textbf{A)}. \textbf{C)} The relationship between the Gumbel copula parameter $\theta$ and the reallocation parameter $\tau$ in the stable state of RGBM. \textbf{D)} The relationship between the Gumbel copula parameter $\theta$ and the rank correlation $\rho$ in the stable state of RGBM. The parameters were estimated from a transition matrix in which $\delta = 20$ and $N = 10^4$.
+\caption{\textbf{Mixing time and wealth transition matrices.} \textbf{A)} Transition matrix for the stationary regime of RGBM estimated with $\tau = 0.02$ per year, $\sigma^2 = 0.01$ per year and $N = 10^4$ people. \textbf{B)} An example for a transition matrix from data simulated from a Gumbel copula whose parameter $\theta$ is chosen to be in accordance with the RGBM parameters used in \textbf{A)}. \textbf{C)} The relationship between the Gumbel copula parameter $\theta$ and the reallocation parameter $\tau$ in the stable state of RGBM. \textbf{D)} The relationship between the Gumbel copula parameter $\theta$ and the rank correlation $\rho$ in the stable state of RGBM. The parameters were estimated from a transition matrix in which $\delta = 20$ years and $N = 10^4$ people.
 \label{fig:rgbm-wealth-matrices}}
 \end{figure}
 \FloatBarrier
@@ -456,7 +457,7 @@ For this purpose, in~\Fref{rgbm-mixing-time}A-B we plot the log of Kolmogorov-Sm
 \begin{figure}[!htb]
 \centering
 \includegraphics[width=1.0\textwidth]{figs/fig_mixing_time_rgbm.eps}
-\caption{\textbf{Mixing time in RGBM.} \textbf{A)} Log of KS statistic as a function of time for a realization of an RGBM process with a subsample size of $10^4$ for different noise amplitudes and reallocation parameters. \textbf{B)} Same as \textbf{A)}, only with a subsample size of $10^5$. \textbf{C)} The log of the stationary KS statistic as a function of the subsample size for various $\sigma^2$ and $\tau$. In the simulations $N = 10^6$. \label{fig:rgbm-mixing-time}}
+\caption{\textbf{Mixing time in RGBM.} \textbf{A)} Log of KS statistic as a function of time for a realization of an RGBM process with a subsample size of $10^4$ for different noise amplitudes and reallocation parameters. \textbf{B)} Same as \textbf{A)}, only with a subsample size of $10^5$ people. \textbf{C)} The log of the stationary KS statistic as a function of the subsample size for various $\sigma^2$ and $\tau$. In the simulations $N = 10^6$ people. \label{fig:rgbm-mixing-time}}
 \end{figure}
 
 \section{Derivation of the correlation function in RGBM}\label{sec:rgbm-correlation-function}
@@ -511,8 +512,8 @@ In the first experiment, we study the association between the standard measures 
 \begin{figure}[!htb]
 \centering
 \includegraphics[width=1.0\textwidth]{figs/fig_rgbm_sigma_relationship.eps}
-\caption{\textbf{Relationship between the noise amplitude and standard measures of economic mobility.} \textbf{A)} Difference between $-\tau$ and the log of the Spearman's rank correlation divided by the temporal difference as a function of $\sigma^2/$. \textbf{B)} Same as \textbf{A)}, only on the y axis is the difference between $-\tau$ and the log of the IGE. \textbf{C)} Slope of the lines presented in \textbf{A-B}, as a function of $\tau$. 
-\textbf{A-C} In the simulations, $\delta = 20$ and $N = 10^4$.
+\caption{\textbf{Relationship between the noise amplitude and standard measures of economic mobility.} \textbf{A)} Difference between $-\tau$ and the log of the Spearman's rank correlation divided by the temporal difference as a function of $\sigma^2/2$. \textbf{B)} Same as \textbf{A)}, only on the y axis is the difference between $-\tau$ and the log of the IGE. \textbf{C)} Slope of the lines presented in \textbf{A-B}, as a function of $\tau$. 
+\textbf{A-C} In the simulations, $\delta = 20$ years and $N = 10^4$ people.
 \label{fig:rgbm-standard-measures-sigma}}
 \end{figure}
 \FloatBarrier
@@ -523,7 +524,7 @@ In the same same fashion, in \Fref{rgbm-standard-measures-delta} we examine the 
 \centering
 \includegraphics[width=1.0\textwidth]{figs/fig_rgbm_delta_relationship.eps}
 \caption{\textbf{Relationship between the temporal difference and standard measures of economic mobility.} \textbf{A)} Additive inverse of the logarithm of the rank correlation divided by $\tau +\frac{\sigma^2}{2}$ as a function of $\delta$. \textbf{B)} Same as \textbf{A)}, only on the y axis only for the logarithm of IGE. \textbf{C)} Slope of the lines presented in \textbf{A-B}, as a function of $\tau$. 
-\textbf{A-C} In the simulations, $\delta = 20$ and $N = 10^4$.
+\textbf{A-C} In the simulations, $\delta = 20$ years and $N = 10^4$ people.
 \label{fig:rgbm-standard-measures-delta}}
 \end{figure}
 \FloatBarrier
