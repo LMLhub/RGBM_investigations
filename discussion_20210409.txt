@@ -7,9 +7,13 @@ GBM is not mixing because its measure changes over time (i.e. it is non-stationa
 
 *)What is the message of our paper?
 
-The message of our paper should be that there is a phenomenon called mixing time which quantifies the time needed for an individual to explore the whole wealth distribution. As such, it can be used as a measure of mobility. 
+The message of our paper is that there is a phenomenon called mixing that describes a situation in which every subsest of the population visits the entire distribution, e.g. of wealth, over time.
+In other words, when there is mixing it is possible for everyone to move between any ranks in the distribution over time. Mixing is thus a mathematical manifestation of the "American Dream".
+It is naturally linked to mobility, however the two are not the same.
+Mobility exists whenever individual ranks are not fixed over time. Yet, the existence of mobility, a degree of which always exists practically, does not guarantee mixing.
+When a system is mixing, we can characterise it by its mixing time, which quantifies the time needed for an individual to explore the whole wealth distribution. As such, it can be used as a measure of mobility. 
 
-In general, mobility may exist within the population as measured with the standard measures of mobility. However, this does not necessarily mean that there is mixing. Hence, it can be said that mixing time is a quantification of the "American dream", i.e., the feasibility of upward social mobility for everyone, achieved through hard work in a society with few barriers.
+%In general, mobility may exist within the population as measured with the standard measures of mobility. However, this does not necessarily mean that there is mixing. Hence, it can be said that mixing time is a quantification of the "American dream", i.e., the feasibility of upward social mobility for everyone, achieved through hard work in a society with few barriers.
 
 *How do we measure mixing time?
 
