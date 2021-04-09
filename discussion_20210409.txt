@@ -1,0 +1,16 @@
+Key points from the discussion on 09.04.2021:
+
+
+*)Why GBM is not mixing?
+
+GBM is not mixing because its measure changes over time (i.e. it is non-stationary). Thus one cannot use the definitions of mixing to study the GBM properties.
+
+*)What is the message of our paper?
+
+The message of our paper should be that there is a phenomenon called mixing time which quantifies the time needed for an individual to explore the whole wealth distribution. As such, it can be used as a measure of mobility. 
+
+In general, mobility may exist within the population as measured with the standard measures of mobility. However, this does not necessarily mean that there is mixing. Hence, it can be said that mixing time is a quantification of the "American dream", i.e., the feasibility of upward social mobility for everyone, achieved through hard work in a society with few barriers.
+
+*How do we measure mixing time?
+
+In a system that is mixing, we can measure mixing time via the decay of correlation function whenever it is properly defined. For example, in RGBM the correlation function is defined when tau > (sigma^2)/2 and it decays exponentially with a rate tau. We point out that in general, the decay rate might not be exponential.
